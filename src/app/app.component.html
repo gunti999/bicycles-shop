@@ -1,0 +1,32 @@
+<div class="wrapper">
+    <div class="header">
+        <div class="nav">
+            <div class="logo">
+                <h1 routerLink="/">Bicycles shop</h1>
+            </div>
+            <div class="menu">
+                <button 
+                        mat-button
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}"
+                        routerLink="/">
+                        Home
+                </button>
+                <button mat-button routerLinkActive="active" routerLink="/products">Products</button>
+                <button mat-button routerLinkActive="active" routerLink="/about">About</button>
+                <button mat-button routerLinkActive="active" routerLink="/contacts">Contacts</button>
+            </div>
+            <div class="registration">
+                <button mat-button>Log in</button>
+                <span>|</span>
+                <button mat-button>Log out</button>
+            </div>
+        </div>
+    </div>
+
+    <router-outlet></router-outlet>
+
+    <div class="footer">
+        <strong>FOOTER SECTION</strong>
+    </div>
+</div>
