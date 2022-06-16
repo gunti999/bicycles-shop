@@ -1,1 +1,13 @@
-<p>product works!</p>
+<div class="product">
+    <mat-grid-list cols="2" rowHeight="2:1" gutterSize="10px">
+        <mat-grid-tile style="background-image: url({{product?.bgImageUrl}});"></mat-grid-tile>
+        <mat-grid-tile>
+            <div class="product-info">
+                <h2 class="product-title">{{product?.name | titlecase}}</h2>
+                <h3 class="product-cost">{{product?.description?.price | currency}}</h3>
+                <p class="porduct-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, nostrum.</p>
+                <button mat-raised-button color="primary">To cart</button>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

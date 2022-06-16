@@ -1,0 +1,161 @@
+[
+    {
+        "id": 0,
+        "name": "gorny-bicycle-1",
+        "category": "sport",
+        "bgImageUrl": "/assets/img/products/gorny1.jpeg",
+        "description": {
+            "weight": 10,
+            "frameMaterial": "steel",
+            "price": 100,
+            "currency": "usd",
+            "numberOfSpeeds": 10,
+            "producingCountry": "Belarus"
+        },
+        "rating": 0
+    },
+
+    {
+        "id": 1,
+        "name": "gorny-bicycle-2",
+        "category": "sport",
+        "bgImageUrl": "/assets/img/products/gorny1.jpeg",
+        "description": {
+            "weight": 20,
+            "frameMaterial": "steel",
+            "price": 200,
+            "currency": "usd",
+            "numberOfSpeeds": 20,
+            "producingCountry": "Ukrain"
+        },
+        "rating": 0
+    },
+
+    {
+        "id": 2,
+        "name": "gorod-bicycle-3",
+        "category": "city",
+        "bgImageUrl": "/assets/img/products/gorod1.jpeg",
+        "description": {
+            "weight": 30,
+            "frameMaterial": "steel",
+            "price": 300,
+            "currency": "usd",
+            "numberOfSpeeds": 30,
+            "producingCountry": "Ukrain"
+        },
+        "rating": 0
+    },
+
+    {
+        "id": 3,
+        "name": "gorod-bicycle-4",
+        "category": "city",
+        "bgImageUrl": "/assets/img/products/gorod1.jpeg",
+        "description": {
+            "weight": 40,
+            "frameMaterial": "steel",
+            "price": 400,
+            "currency": "usd",
+            "numberOfSpeeds": 40,
+            "producingCountry": "USA"
+        },
+        "rating": 0
+    },
+
+    {
+        "id": 4,
+        "name": "shosse-bicycle-5",
+        "category": "highway",
+        "bgImageUrl": "/assets/img/products/shosse1.jpeg",
+        "description": {
+            "weight": 50,
+            "frameMaterial": "steel",
+            "price": 500,
+            "currency": "usd",
+            "numberOfSpeeds": 50,
+            "producingCountry": "USA"
+        },
+        "rating": 0
+    },
+
+    {
+        "id": 5,
+        "name": "shosse-bicycle-6",
+        "category": "highway",
+        "bgImageUrl": "/assets/img/products/shosse1.jpeg",
+        "description": {
+            "weight": 60,
+            "frameMaterial": "steel",
+            "price": 600,
+            "currency": "usd",
+            "numberOfSpeeds": 60,
+            "producingCountry": "USA"
+        },
+        "rating": 0
+    },
+
+    {
+        "id": 6,
+        "name": "podrostok-bicycle-6",
+        "category": "child",
+        "bgImageUrl": "/assets/img/products/podrostok1.jpeg",
+        "description": {
+            "weight": 70,
+            "frameMaterial": "steel",
+            "price": 700,
+            "currency": "usd",
+            "numberOfSpeeds": 70,
+            "producingCountry": "Belarus"
+        },
+        "rating": 0
+    },
+
+    {
+        "id": 7,
+        "name": "podrostok-bicycle-6",
+        "category": "child",
+        "bgImageUrl": "/assets/img/products/podrostok1.jpeg",
+        "description": {
+            "weight": 80,
+            "frameMaterial": "steel",
+            "price": 800,
+            "currency": "usd",
+            "numberOfSpeeds": 80,
+            "producingCountry": "Ukrain"
+        },
+        "rating": 0
+    },
+
+    {
+        "id": 8,
+        "name": "cruise-bicycle-6",
+        "category": "cruise",
+        "bgImageUrl": "/assets/img/products/cruise1.jpeg",
+        "description": {
+            "weight": 90,
+            "frameMaterial": "steel",
+            "price": 1000,
+            "currency": "usd",
+            "numberOfSpeeds": 90,
+            "producingCountry": "Belarus"
+        },
+        "rating": 0
+    },
+
+    {
+        "id": 9,
+        "name": "cruise-bicycle-6",
+        "category": "cruise",
+        "bgImageUrl": "/assets/img/products/cruise1.jpeg",
+        "description": {
+            "weight": 100,
+            "frameMaterial": "steel",
+            "price": 100,
+            "currency": "usd",
+            "numberOfSpeeds": 100,
+            "producingCountry": "Ukrain"
+        },
+        "rating": 0
+    }
+]

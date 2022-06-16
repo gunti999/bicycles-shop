@@ -1,0 +1,24 @@
+.product-container {
+
+    padding: 20px;
+
+    .product-card {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top;
+        border: 2px solid #9191913d;
+
+        .product-desc {
+            background-color: #91919179;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+
+            .product-button {
+                display: flex;
+                justify-content: space-between;
+            }
+
+        }
+    }
+}

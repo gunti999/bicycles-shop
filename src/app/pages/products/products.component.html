@@ -1,5 +1,14 @@
-<mat-grid-list cols="5" rowHeight="2:1">
-    <mat-grid-tile>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, dolorum.
-        <button mat-raised-button (click)="productInfo()">More info</button>
-    </mat-grid-tile>
-  </mat-grid-list>
+<div class="product-container">
+    <mat-grid-list cols="4" rowHeight="1:1" gutterSize="20px">
+        <mat-grid-tile class="product-card" *ngFor="let p of prod" style="background-image: url({{p.bgImageUrl}})">
+            <div class="product-desc">
+                <h2 class="product-title">{{p.name | titlecase}}</h2>
+                <p class="product-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, cum. {{p.description.weight}}</p>
+                <div class="product-button">
+                    <button mat-raised-button [routerLink]="['/product', p.id]">More info</button>
+                    <button mat-raised-button color="primary">To cart</button>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
