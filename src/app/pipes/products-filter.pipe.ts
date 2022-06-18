@@ -25,7 +25,6 @@ export class ProductsFilterPipe implements PipeTransform {
     if (country) {
       prods = prods.filter(p => p.description.producingCountry == country)
     }
-
     if (maxPrice >= minPrice) {
       prods = prods.filter(el =>
         el.description.price >= minPrice && el.description.price <= maxPrice)
