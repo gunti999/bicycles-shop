@@ -1,10 +1,12 @@
-<div class="product">
+<div class="product-container">
+    <button mat-raised-button routerLink="/products">Back</button>
     <mat-grid-list cols="2" rowHeight="2:1" gutterSize="10px">
-        <mat-grid-tile style="background-image: url({{product?.bgImageUrl}});"></mat-grid-tile>
+        <mat-grid-tile class="product-img" style="background-image: url({{product?.bgImageUrl}});"></mat-grid-tile>
         <mat-grid-tile>
             <div class="product-info">
                 <h2 class="product-title">{{product?.name | titlecase}}</h2>
-                <h3 class="product-cost">{{product?.description?.price | currency}}</h3>
+                <h3 class="product-cost"><strong>{{product?.description?.price | currency}}</strong></h3>
+                <span class="product-category"><strong>Category: </strong>{{product?.category | titlecase}}</span>
                 <p class="porduct-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, nostrum.</p>
                 <button mat-raised-button color="primary">To cart</button>
             </div>

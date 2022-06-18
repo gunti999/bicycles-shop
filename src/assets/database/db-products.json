@@ -8,7 +8,7 @@
             "weight": 10,
             "frameMaterial": "steel",
             "price": 100,
-            "currency": "usd",
+            "currency": "eur",
             "numberOfSpeeds": 10,
             "producingCountry": "Belarus"
         },
@@ -26,7 +26,7 @@
             "price": 200,
             "currency": "usd",
             "numberOfSpeeds": 20,
-            "producingCountry": "Ukrain"
+            "producingCountry": "Ukraine"
         },
         "rating": 0
     },
@@ -40,9 +40,9 @@
             "weight": 30,
             "frameMaterial": "steel",
             "price": 300,
-            "currency": "usd",
+            "currency": "eur",
             "numberOfSpeeds": 30,
-            "producingCountry": "Ukrain"
+            "producingCountry": "Ukraine"
         },
         "rating": 0
     },
@@ -72,7 +72,7 @@
             "weight": 50,
             "frameMaterial": "steel",
             "price": 500,
-            "currency": "usd",
+            "currency": "eur",
             "numberOfSpeeds": 50,
             "producingCountry": "USA"
         },
@@ -88,7 +88,7 @@
             "weight": 60,
             "frameMaterial": "steel",
             "price": 600,
-            "currency": "usd",
+            "currency": "byn",
             "numberOfSpeeds": 60,
             "producingCountry": "USA"
         },
@@ -120,9 +120,9 @@
             "weight": 80,
             "frameMaterial": "steel",
             "price": 800,
-            "currency": "usd",
+            "currency": "byn",
             "numberOfSpeeds": 80,
-            "producingCountry": "Ukrain"
+            "producingCountry": "Ukraine"
         },
         "rating": 0
     },
@@ -136,7 +136,7 @@
             "weight": 90,
             "frameMaterial": "steel",
             "price": 1000,
-            "currency": "usd",
+            "currency": "eur",
             "numberOfSpeeds": 90,
             "producingCountry": "Belarus"
         },
@@ -154,7 +154,7 @@
             "price": 100,
             "currency": "usd",
             "numberOfSpeeds": 100,
-            "producingCountry": "Ukrain"
+            "producingCountry": "Ukraine"
         },
         "rating": 0
     }

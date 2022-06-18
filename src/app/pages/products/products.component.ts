@@ -10,11 +10,19 @@ import { AppDbProductsService, Product } from 'src/app/services/app-db-products.
 export class ProductsComponent implements OnInit {
 
   prod: Product[] = [];
+  filterCategoryList: string[] = [];
+  filterCurrencyList: string[] = [];
+  filterCountryList: string[] = [];
+  category = '';
+  currency = '';
+  country = '';
+  minPrice = 0;
+  maxPrice = 0;
 
   constructor(
     private router: Router,
     private appDb: AppDbProductsService
-    ) {}
+  ) { }
 
   productInfo() {
     this.router.navigate(['/product']);
@@ -26,9 +34,32 @@ export class ProductsComponent implements OnInit {
 
   getData() {
     this.appDb.getProducts().subscribe(prod => {
-      console.log(prod);
-      this.prod = prod
+      this.prod = prod;
+      this.getFilterList();
+      this.getMinMaxPrice();
     });
+  }
+
+  getFilterList() {
+    this.prod.forEach(el => {
+      if (!this.filterCategoryList.includes(el.category)) {
+        this.filterCategoryList.push(el.category);
+      }
+      if (!this.filterCurrencyList.includes(el.description.currency)) {
+        this.filterCurrencyList.push(el.description.currency);
+      }
+      if (!this.filterCountryList.includes(el.description.producingCountry)) {
+        this.filterCountryList.push(el.description.producingCountry);
+      }
+    })
+  }
+
+  getMinMaxPrice() {
+    let arr: number[] = [];
+    this.prod.forEach(el => arr.push(el.description.price))
+    arr.sort((a, b) => a - b);
+    this.minPrice = arr[0];
+    this.maxPrice = arr[arr.length - 1];
   }
 
 }

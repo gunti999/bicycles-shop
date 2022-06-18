@@ -5,6 +5,7 @@ import { map, Observable } from 'rxjs';
 export interface Product {
   id: number,
   name: string,
+  category: string,
   bgImageUrl: string,
   description: {
     weight: number,
@@ -31,7 +32,7 @@ export class AppDbProductsService {
   getProductById(id: number) {
     return this.getProducts().pipe(map((arr) => {
       return arr.find((el) => {
-        return el.id === id
+        return el.id === id;
       })
     }))
   }
