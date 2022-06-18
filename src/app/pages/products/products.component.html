@@ -44,6 +44,7 @@
                 <div class="product-desc">
                     <h2 class="product-title">{{p.name | titlecase}}</h2>
                     <span class="product-coast"><strong>{{p.description.price | currency}}</strong></span>
+                    <span class="product-country"><strong>{{p.description.producingCountry | titlecase}}</strong></span>
                     <p class="product-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, cum.</p>
                     <div class="product-button">
                         <button mat-raised-button [routerLink]="['/product', p.id]">More info</button>
