@@ -1,11 +1,39 @@
 .product-container {
-    
+
     padding: 50px 20px;
+
+    .product-btn-back {
+        margin: 20px 0;
+        color: #919191;
+    }
+
+    .product-btn-back:hover {
+        color: black;
+    }
 
     .product-img {
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
     }
-    
+
+}
+
+.product-form {
+    background-color: #7b1fa27d;
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 50px;
+
+    .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .example-full-width {
+        width: 100%;
+    }
+
 }

@@ -1,0 +1,18 @@
+.about-container {
+    margin: 50px 20px;
+
+    .title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .about-adress {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #7b1fa27d;
+        color: #fff;
+        border-radius: 5px 5px 0 0;
+    }
+}

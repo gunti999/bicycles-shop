@@ -2,7 +2,7 @@
     <div class="filter-conatainer">
         <h4>Category</h4>
         <mat-form-field appearance="fill">
-            <mat-label>All</mat-label>
+            <mat-label>Select category</mat-label>
             <mat-select [(ngModel)]="category">
                 <mat-option value="">All</mat-option>
                 <mat-option *ngFor="let p of filterCategoryList" value="{{p}}">{{p | uppercase}}</mat-option>
@@ -10,7 +10,7 @@
         </mat-form-field>
         <h4>Currency</h4>
         <mat-form-field appearance="fill">
-            <mat-label>All</mat-label>
+            <mat-label>Select currency</mat-label>
             <mat-select [(ngModel)]="currency">
                 <mat-option value="">All</mat-option>
                 <mat-option *ngFor="let p of filterCurrencyList" value="{{p}}">{{p | uppercase}}</mat-option>
@@ -18,7 +18,7 @@
         </mat-form-field>
         <h4>Country</h4>
         <mat-form-field appearance="fill">
-            <mat-label>All</mat-label>
+            <mat-label>Select country</mat-label>
             <mat-select [(ngModel)]="country">
                 <mat-option value="">All</mat-option>
                 <mat-option *ngFor="let p of filterCountryList" value="{{p}}">{{p | uppercase}}</mat-option>
@@ -43,8 +43,9 @@
                 style="background-image: url({{p.bgImageUrl}})">
                 <div class="product-desc">
                     <h2 class="product-title">{{p.name | titlecase}}</h2>
-                    <span class="product-coast"><strong>{{p.description.price | currency}}</strong></span>
-                    <span class="product-country"><strong>{{p.description.producingCountry | titlecase}}</strong></span>
+                    <span class="product-coast"><strong>{{p.description.price}} </strong></span>
+                    <span class="product-currency"><strong>{{p.description.currency | uppercase}} </strong></span>
+                    <p class="product-country"><span>Producing country: </span><strong>{{p.description.producingCountry | uppercase}}</strong></p>
                     <p class="product-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, cum.</p>
                     <div class="product-button">
                         <button mat-raised-button [routerLink]="['/product', p.id]">More info</button>

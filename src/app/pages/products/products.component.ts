@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AppDbProductsService, Product } from 'src/app/services/app-db-products.service';
+
 
 @Component({
   selector: 'app-products',
@@ -21,7 +22,8 @@ export class ProductsComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private appDb: AppDbProductsService
+    private appDb: AppDbProductsService,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   productInfo() {
@@ -30,6 +32,10 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
+    this.activatedRoute.queryParamMap.subscribe(paramMap => {
+      this.category = paramMap.get('category') || '';
+      console.log(this.category);
+    })
   }
 
   getData() {

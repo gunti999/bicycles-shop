@@ -18,6 +18,8 @@ import { ProductsFilterPipe } from './pipes/products-filter.pipe';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
+import {MatIconModule} from '@angular/material/icon';
+import { BasketComponent } from './basket/basket.component';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     ProductsComponent,
     AboutComponent,
     ContactsComponent,
-    ProductsFilterPipe
+    ProductsFilterPipe,
+    BasketComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     MatSelectModule,
     MatSliderModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

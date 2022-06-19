@@ -1,5 +1,5 @@
 <div class="product-container">
-    <button mat-raised-button routerLink="/products">Back</button>
+    <a class="product-btn-back" mat-button routerLink="/products">&#10094; Back</a>
     <mat-grid-list cols="2" rowHeight="2:1" gutterSize="10px">
         <mat-grid-tile class="product-img" style="background-image: url({{product?.bgImageUrl}});"></mat-grid-tile>
         <mat-grid-tile>
@@ -12,4 +12,19 @@
             </div>
         </mat-grid-tile>
     </mat-grid-list>
+    <div class="product-form">
+        <h3>Leave a comment</h3>
+        <form class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Title</mat-label>
+              <input matInput placeholder="title" value="">
+            </mat-form-field>
+          
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Leave a comment</mat-label>
+              <textarea matInput placeholder="comment"></textarea>
+            </mat-form-field>
+          </form>
+          <button mat-raised-button color="primary">Submit</button>
+    </div>
 </div>
