@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AppDbProductsService } from 'src/app/services/app-db-products.service';
 
 @Component({
@@ -12,7 +11,6 @@ export class HomeComponent implements OnInit {
   categoryList: string[] = [];
 
   constructor(
-    private router: Router,
     private appDb: AppDbProductsService
   ) { }
 

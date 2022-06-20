@@ -5,13 +5,14 @@
   .home-category-card {
 
     cursor: pointer;
+    transition: all 0.3s;
 
     .home-category {
 
       transform: rotate(270deg);
   
       h3 {
-        font-size: 40px;
+        font-size: 50px;
         font-weight: 800;
         text-align: justify;
       }
@@ -21,6 +22,6 @@
   .home-category-card:hover {
     background-color: rgb(243, 243, 243);
     color: #7b1fa2;
+    box-shadow: 0px 0px 10px 2px rgba(123, 31, 162, 0.2) inset;
   }
-
 }
