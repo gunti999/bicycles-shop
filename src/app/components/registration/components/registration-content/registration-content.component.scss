@@ -1,0 +1,26 @@
+.registration {
+
+    text-align: center;
+  
+    .mat-dialog-content {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  
+      mat-form-field {
+        width: 300px;
+      }
+  
+    }
+  
+    .reg-btn {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      button {
+        width: 100%;
+      }
+
+    }
+  }
