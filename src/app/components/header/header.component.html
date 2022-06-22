@@ -1,0 +1,25 @@
+<div class="header">
+    <div class="nav">
+        <div class="logo">
+            <h1 routerLink="/">{{title | titlecase}}</h1>
+        </div>
+        <div class="menu">
+            <button 
+                    mat-button
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                    routerLink="/">
+                    Home
+            </button>
+            <button mat-button routerLinkActive="active" routerLink="/products">Products</button>
+            <button mat-button routerLinkActive="active" routerLink="/about">About</button>
+            <button mat-button routerLinkActive="active" routerLink="/contacts">Contacts</button>
+        </div>
+        <div class="registration">
+            <!-- <mat-icon aria-hidden="false" aria-label="basket">basket</mat-icon> -->
+            <app-log-in></app-log-in>
+            <span>|</span>
+            <app-registration></app-registration>
+        </div>
+    </div>
+</div>

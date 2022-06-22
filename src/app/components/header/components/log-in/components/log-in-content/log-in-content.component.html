@@ -1,0 +1,29 @@
+<div class="log-in">
+  <h2 class="mat-dialog-title">{{data?.title | titlecase}}</h2>
+  <form class="mat-dialog-content" [formGroup]="form" (ngSubmit)="login()">
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput type="text" formControlName="username">
+      <mat-hint>Enter your username</mat-hint>
+      <mat-error>
+        At least 4 characters
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-hint>Enter your username</mat-hint>
+      <mat-error>
+        At least 4 characters
+      </mat-error>
+    </mat-form-field>
+    <div class="login-btn">
+      <button mat-raised-button mat-button type="submit" [mat-dialog-close]="'close'" [disabled]="form.invalid" color="primary">Log in</button>
+      <button mat-raised-button mat-button mat-dialog-close color="warn">Cancel</button>
+    </div>
+  </form>
+</div>

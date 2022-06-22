@@ -13,8 +13,14 @@
 
   }
 
-  .mat-dialog-actions {
+  .login-btn {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
+
+    button {
+      width: 100%;
+    }
+
   }
 }

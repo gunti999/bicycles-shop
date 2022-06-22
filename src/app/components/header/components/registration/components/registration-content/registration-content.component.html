@@ -4,7 +4,10 @@
     <mat-form-field appearance="fill">
       <mat-label>Username</mat-label>
       <input matInput type="text" formControlName="username">
-      <mat-hint>At least 4 characters</mat-hint>
+      <mat-hint>Enter your username</mat-hint>
+      <mat-error>
+        At least 4 characters
+      </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Password</mat-label>
@@ -13,7 +16,10 @@
         [attr.aria-pressed]="hideMain">
         <mat-icon>{{hideMain ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
-      <mat-hint>At least 4 characters</mat-hint>
+      <mat-hint>Enter your password</mat-hint>
+      <mat-error>
+        At least 4 characters
+      </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Repeat password</mat-label>
@@ -22,7 +28,10 @@
         [attr.aria-pressed]="hideRepeat">
         <mat-icon >{{hideRepeat ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
-      <mat-hint color="warn">At least 4 characters</mat-hint>
+      <mat-hint>Enter your password again</mat-hint>
+      <mat-error>
+        At least 4 characters
+      </mat-error>
     </mat-form-field>
     <div class="reg-btn">
       <button mat-raised-button mat-dialog-close type="submit" [disabled]="form.invalid" color="primary">Submit</button>

@@ -4,9 +4,9 @@ import { ProductComponent } from './components/pages/product/product.component';
 import { ProductsComponent } from './components/pages/products/products.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { ContactsComponent } from './components/pages/contacts/contacts.component';
-import { BasketComponent } from './components/basket/basket.component';
-import { LogInComponent } from './components/log-in/log-in.component';
-import { LogInContentComponent } from './components/log-in/components/log-in-content/log-in-content.component';
+import { BasketComponent } from './components/header/components/basket/basket.component';
+import { LogInComponent } from './components/header/components/log-in/log-in.component';
+import { LogInContentComponent } from './components/header/components/log-in/components/log-in-content/log-in-content.component';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,8 +24,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { ProductsFilterPipe } from './pipes/products-filter.pipe';
-import { RegistrationComponent } from './components/registration/registration.component';
-import { RegistrationContentComponent } from './components/registration/components/registration-content/registration-content.component';
+import { RegistrationComponent } from './components/header/components/registration/registration.component';
+import { RegistrationContentComponent } from './components/header/components/registration/components/registration-content/registration-content.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { RegistrationContentComponent } from './components/registration/componen
     LogInComponent,
     LogInContentComponent,
     RegistrationComponent,
-    RegistrationContentComponent
+    RegistrationContentComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

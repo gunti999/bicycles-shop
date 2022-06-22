@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AuthorizationService } from 'src/app/services/authorization.service';
 
 @Component({
   selector: 'app-registration-content',
@@ -13,7 +14,10 @@ export class RegistrationContentComponent implements OnInit {
   hideMain: boolean = true;
   hideRepeat: boolean = true;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private auth: AuthorizationService 
+    ) {
 
   }
 
@@ -35,7 +39,7 @@ export class RegistrationContentComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.form.value);
+    this.auth.registration(this.form.value)
   }
 
 }

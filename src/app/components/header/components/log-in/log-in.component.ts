@@ -22,8 +22,10 @@ export class LogInComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(res => {
-      console.log(res);
+      console.log(res);  
     })
+
+    
   }
 
 
