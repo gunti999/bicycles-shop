@@ -30,7 +30,8 @@ export class AuthorizationService{
   }
 
   logOut() {
-    localStorage.clear()
+    localStorage.clear();
+    this.users = [];
   }
 
   registration(userData: User) {
