@@ -8,34 +8,47 @@ export interface User {
 @Injectable({
   providedIn: 'root'
 })
-export class AuthorizationService {
+export class AuthorizationService{
 
   users: User[] = [];
   logInUser: User | undefined;
 
-  constructor() { }
+  constructor() {
+    this.users = this.getData();
+  }
 
   logIn(user: string, pass: string) {
     this.logInUser = this.users.find(el => {
-      if(el.username == user && el.password == pass) {
-        console.log(true);
-        
+      if (el.username == user && el.password == pass) {
+        console.log('log in: true');
         return true;
       } else {
-        console.log(false);
-        
+        console.log('log in: false');
         return false;
       }
     })
   }
 
   logOut() {
-
+    localStorage.clear()
   }
 
   registration(userData: User) {
     this.users.push(userData);
-    console.log(this.users);
-    
+  }
+
+  setData(data: User[]) {  
+    const jsonData = JSON.stringify(data);
+    localStorage.setItem('myData', jsonData);
+  }
+
+  getData() {
+    let data = localStorage.getItem('myData')
+    if(data != null) {
+      return JSON.parse(data);
+    } else {
+      return []
+    }
   }
 }
+

@@ -28,6 +28,7 @@ import { RegistrationComponent } from './components/header/components/registrati
 import { RegistrationContentComponent } from './components/header/components/registration/components/registration-content/registration-content.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LogOutComponent } from './components/header/components/log-out/log-out.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FooterComponent } from './components/footer/footer.component';
     RegistrationComponent,
     RegistrationContentComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LogOutComponent
   ],
   imports: [
     BrowserModule,

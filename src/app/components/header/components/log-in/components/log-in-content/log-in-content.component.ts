@@ -30,8 +30,8 @@ export class LogInContentComponent implements OnInit {
   }
 
   login() {
-    console.log(this.form.value);
-    this.auth.logIn(this.form.username, this.form.password);
+    console.log(this.form.value.username, this.form.value.password);
+    this.auth.logIn(this.form.value.username, this.form.value.password);
   }
 
 }

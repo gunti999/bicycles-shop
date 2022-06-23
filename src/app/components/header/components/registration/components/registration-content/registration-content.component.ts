@@ -39,7 +39,8 @@ export class RegistrationContentComponent implements OnInit {
   }
 
   submit() {
-    this.auth.registration(this.form.value)
+    this.auth.registration(this.form.value);
+    this.auth.setData(this.auth.users);
   }
 
 }
