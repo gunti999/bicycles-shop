@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { BasketContentComponent } from './components/basket-content/basket-content.component';
 
 @Component({
   selector: 'app-basket',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasketComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog ) { }
 
   ngOnInit(): void {
   }
+
+  openDialogBasket() {
+    const dialogRef = this.dialog.open(BasketContentComponent, {
+      data: {
+        title: 'Basket'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(res => {
+      console.log(res);  
+    })
+
+    
+  }
+
 
 }

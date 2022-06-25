@@ -22,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { ProductsFilterPipe } from './pipes/products-filter.pipe';
 import { RegistrationComponent } from './components/header/components/registration/registration.component';
@@ -29,6 +30,8 @@ import { RegistrationContentComponent } from './components/header/components/reg
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LogOutComponent } from './components/header/components/log-out/log-out.component';
+import { BasketContentComponent } from './components/header/components/basket/components/basket-content/basket-content.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,8 @@ import { LogOutComponent } from './components/header/components/log-out/log-out.
     RegistrationContentComponent,
     HeaderComponent,
     FooterComponent,
-    LogOutComponent
+    LogOutComponent,
+    BasketContentComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,9 @@ import { LogOutComponent } from './components/header/components/log-out/log-out.
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatBadgeModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

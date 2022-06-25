@@ -1,28 +1,33 @@
 .header {
 
-    background-color: rgb(145, 145, 145);
-    padding: 20px 10px;
-    color: #fff;
+  background-color: rgb(145, 145, 145);
+  padding: 20px 10px;
+  color: #fff;
 
-    .nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        .logo {
-            cursor: pointer;
-            margin: 0;
-        }
-
-        .menu {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-
-            .active {
-                color: rgb(212, 212, 212);
-            }
-        }
+    .logo {
+      cursor: pointer;
+      margin: 0;
     }
+
+    .menu {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+
+      .active {
+        color: rgb(212, 212, 212);
+      }
+    }
+
+    .registration {
+      align-items: center;
+      display: flex;
+    }
+  }
 }
