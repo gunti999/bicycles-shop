@@ -7,6 +7,12 @@ import { ContactsComponent } from './components/pages/contacts/contacts.componen
 import { BasketComponent } from './components/header/components/basket/basket.component';
 import { LogInComponent } from './components/header/components/log-in/log-in.component';
 import { LogInContentComponent } from './components/header/components/log-in/components/log-in-content/log-in-content.component';
+import { RegistrationComponent } from './components/header/components/registration/registration.component';
+import { RegistrationContentComponent } from './components/header/components/registration/components/registration-content/registration-content.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LogOutComponent } from './components/header/components/log-out/log-out.component';
+import { BasketContentComponent } from './components/header/components/basket/components/basket-content/basket-content.component';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,16 +28,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatTableModule } from '@angular/material/table';
 
 import { ProductsFilterPipe } from './pipes/products-filter.pipe';
-import { RegistrationComponent } from './components/header/components/registration/registration.component';
-import { RegistrationContentComponent } from './components/header/components/registration/components/registration-content/registration-content.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { LogOutComponent } from './components/header/components/log-out/log-out.component';
-import { BasketContentComponent } from './components/header/components/basket/components/basket-content/basket-content.component';
-import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -68,7 +68,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatIconModule,
     MatDialogModule,
     MatBadgeModule,
-    MatTabsModule
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

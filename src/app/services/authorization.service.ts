@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 export interface User {
+  id: number,
   username: string,
   password: string
 }
@@ -35,7 +36,15 @@ export class AuthorizationService{
   }
 
   registration(userData: User) {
+    userData.id = this.idFromUsers();
     this.users.push(userData);
+  }
+
+  idFromUsers() {
+    if (this.users.length == 0) {
+      return 1;
+    }
+    return this.users.sort((a, b) => b.id - a.id)[0].id + 1;
   }
 
   setData(data: User[]) {  

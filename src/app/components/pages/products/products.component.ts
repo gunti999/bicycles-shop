@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AddToCartService } from 'src/app/services/add-to-cart.service';
 import { AppDbProductsService, Product } from 'src/app/services/app-db-products.service';
 
 
@@ -23,8 +24,15 @@ export class ProductsComponent implements OnInit {
   constructor(
     private router: Router,
     private appDb: AppDbProductsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private cart: AddToCartService
   ) { }
+
+
+  go(id:number) {
+    console.log(this.cart.addOrder(id));
+    
+  }
 
   productInfo() {
     this.router.navigate(['/product']);
