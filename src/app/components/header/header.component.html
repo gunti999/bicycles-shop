@@ -4,12 +4,8 @@
             <h1 routerLink="/">{{title | titlecase}}</h1>
         </div>
         <div class="menu">
-            <button 
-                    mat-button
-                    routerLinkActive="active"
-                    [routerLinkActiveOptions]="{exact: true}"
-                    routerLink="/">
-                    Home
+            <button mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">
+                Home
             </button>
             <button mat-button routerLinkActive="active" routerLink="/products">Products</button>
             <button mat-button routerLinkActive="active" routerLink="/about">About</button>
@@ -18,11 +14,30 @@
         <div class="registration">
             <!-- <mat-icon aria-hidden="false" aria-label="basket">basket</mat-icon> -->
             <app-basket></app-basket>
-            <app-log-in></app-log-in>
-            <span>|</span>
-            <app-registration></app-registration>
-            <span>|</span>
-            <app-log-out></app-log-out>
+            <div class="user-informatiom" [class.hide]="!this.auth.authUser" [class.show]="this.auth.authUser">
+                <mat-icon aria-hidden="false" aria-label="user">person</mat-icon>
+                <span>{{this.auth.logInUser?.username}}</span>
+            </div>
+            <app-log-in
+            [class.hide]="this.auth.authUser"
+            [class.show]="!this.auth.authUser"
+            ></app-log-in>
+            <span
+            [class.hide]="this.auth.authUser"
+            [class.show]="!this.auth.authUser"
+            >|</span>
+            <app-registration
+            [class.hide]="this.auth.authUser"
+            [class.show]="!this.auth.authUser"
+            ></app-registration>
+            <span
+            [class.hide]="!this.auth.authUser"
+            [class.show]="this.auth.authUser"
+            >|</span>
+            <app-log-out
+            [class.hide]="!this.auth.authUser"
+            [class.show]="this.auth.authUser"
+            ></app-log-out>
         </div>
     </div>
 </div>

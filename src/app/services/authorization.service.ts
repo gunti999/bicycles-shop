@@ -12,7 +12,8 @@ export interface User {
 export class AuthorizationService{
 
   users: User[] = [];
-  logInUser: User | undefined;
+  logInUser: User | undefined; 
+  authUser: boolean = false; 
 
   constructor() {
     this.users = this.getData();
@@ -21,18 +22,18 @@ export class AuthorizationService{
   logIn(user: string, pass: string) {
     this.logInUser = this.users.find(el => {
       if (el.username == user && el.password == pass) {
-        console.log('log in: true');
-        return true;
+        return this.authUser = true;
       } else {
-        console.log('log in: false');
-        return false;
+        return this.authUser = false;
       }
     })
+    console.log(this.logInUser);
   }
 
   logOut() {
     localStorage.clear();
     this.users = [];
+    this.authUser = false;
   }
 
   registration(userData: User) {

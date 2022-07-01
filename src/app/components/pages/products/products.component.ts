@@ -28,12 +28,6 @@ export class ProductsComponent implements OnInit {
     private cart: AddToCartService
   ) { }
 
-
-  go(id:number) {
-    console.log(this.cart.addOrder(id));
-    
-  }
-
   productInfo() {
     this.router.navigate(['/product']);
   }
@@ -42,7 +36,6 @@ export class ProductsComponent implements OnInit {
     this.getData();
     this.activatedRoute.queryParamMap.subscribe(paramMap => {
       this.category = paramMap.get('category') || '';
-      console.log(this.category);
     })
   }
 

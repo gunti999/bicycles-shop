@@ -18,9 +18,9 @@ export class AddToCartService {
     private prod: AppDbProductsService
   ) { }
 
-  addOrder(id: number) {
-    this.prod.getProductById(id)
-  }
+  // addOrder(id: number) {
+    
+  // }
 
   // removeOrder(productId) {
 

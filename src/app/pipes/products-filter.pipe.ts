@@ -14,7 +14,6 @@ export class ProductsFilterPipe implements PipeTransform {
     minPrice: number,
     maxPrice: number
   ): Product[] {
-    console.log(minPrice, maxPrice);
 
     if (category) {
       prods = prods.filter(p => p.category == category)
