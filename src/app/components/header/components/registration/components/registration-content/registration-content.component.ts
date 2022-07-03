@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 
@@ -10,9 +10,24 @@ import { AuthorizationService } from 'src/app/services/authorization.service';
 })
 export class RegistrationContentComponent implements OnInit {
 
-  form: FormGroup | any;
+  form: FormGroup = new FormGroup({
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4)
+    ]),
+    password: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(6)
+    ]),
+    confirmPassword: new FormControl(null, [
+      Validators.required
+    ])
+  }, {
+    validators: this.confirmPasswordValidation
+  });
   hideMain: boolean = true;
   hideRepeat: boolean = true;
+  errorMessage: string = '';
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -22,20 +37,26 @@ export class RegistrationContentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      username: new FormControl('', [
-        Validators.required,
-        Validators.minLength(4)
-      ]),
-      password: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(4)
-      ]),
-      repeatPassword: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(4)
-      ])
-    })
+    
+  }
+
+  confirmPasswordValidation(control: AbstractControl) {
+    const password = control.get('password');
+    const confirmPassword = control.get('confirmPassword');
+    if (password?.value === confirmPassword?.value) {
+      return null;
+    } else {
+      confirmPassword?.setErrors({passwordsNotMatch: true})
+      return {passwordsNotMatch: true}
+    }
+  }
+
+  getConfirmPasswordErrorMessage() {
+    if (this.form.hasError('passwordsNotMatch')) {
+      return 'Your passwords do not match'
+    } else {
+      return 'At least 6 characters'
+    }
   }
 
   submit() {

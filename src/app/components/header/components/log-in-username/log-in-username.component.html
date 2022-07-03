@@ -1,0 +1,4 @@
+<div class="username" [class.hide]="!this.auth.authUser" [class.show]="this.auth.authUser">
+    <mat-icon class="username-icon" aria-hidden="false" aria-label="user">person</mat-icon>
+    <span>{{this.auth.logInUser?.username}}</span>
+</div>

@@ -27,12 +27,10 @@ export class AuthorizationService{
         return this.authUser = false;
       }
     })
-    console.log(this.logInUser);
+    console.log(`Autorization user: ${this.authUser}`);
   }
 
   logOut() {
-    localStorage.clear();
-    this.users = [];
     this.authUser = false;
   }
 

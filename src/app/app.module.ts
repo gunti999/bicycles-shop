@@ -32,6 +32,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatTableModule } from '@angular/material/table';
 
 import { ProductsFilterPipe } from './pipes/products-filter.pipe';
+import { LogInUsernameComponent } from './components/header/components/log-in-username/log-in-username.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ProductsFilterPipe } from './pipes/products-filter.pipe';
     HeaderComponent,
     FooterComponent,
     LogOutComponent,
-    BasketContentComponent
+    BasketContentComponent,
+    LogInUsernameComponent
   ],
   imports: [
     BrowserModule,

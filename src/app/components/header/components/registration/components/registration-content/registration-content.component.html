@@ -18,20 +18,18 @@
       </button>
       <mat-hint>Enter your password</mat-hint>
       <mat-error>
-        At least 4 characters
+        At least 6 characters
       </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
-      <mat-label>Repeat password</mat-label>
-      <input matInput [type]="hideRepeat ? 'password' : 'text'" formControlName="repeatPassword">
+      <mat-label>Confirm password</mat-label>
+      <input matInput [type]="hideRepeat ? 'password' : 'text'" formControlName="confirmPassword">
       <button mat-icon-button matSuffix (click)="hideRepeat = !hideRepeat" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hideRepeat">
         <mat-icon >{{hideRepeat ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
       <mat-hint>Enter your password again</mat-hint>
-      <mat-error>
-        At least 4 characters
-      </mat-error>
+      <mat-error>{{getConfirmPasswordErrorMessage()}}</mat-error>
     </mat-form-field>
     <div class="reg-btn">
       <button mat-raised-button mat-dialog-close type="submit" [disabled]="form.invalid" color="primary">Submit</button>

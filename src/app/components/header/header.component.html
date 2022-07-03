@@ -12,12 +12,11 @@
             <button mat-button routerLinkActive="active" routerLink="/contacts">Contacts</button>
         </div>
         <div class="registration">
-            <!-- <mat-icon aria-hidden="false" aria-label="basket">basket</mat-icon> -->
             <app-basket></app-basket>
-            <div class="user-informatiom" [class.hide]="!this.auth.authUser" [class.show]="this.auth.authUser">
-                <mat-icon aria-hidden="false" aria-label="user">person</mat-icon>
-                <span>{{this.auth.logInUser?.username}}</span>
-            </div>
+            <app-log-in-username
+            [class.hide]="!this.auth.authUser"
+            [class.show]="this.auth.authUser"
+            ></app-log-in-username>
             <app-log-in
             [class.hide]="this.auth.authUser"
             [class.show]="!this.auth.authUser"
