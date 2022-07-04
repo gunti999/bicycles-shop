@@ -37,7 +37,7 @@ export class AuthorizationService {
   registration(userData: User) {
     let userFlag = false;
     this.users.forEach(el => {
-      if (el.username === userData.username || el.password === userData.password) {
+      if (el.username === userData.username) {
         userFlag = true;
       } 
     })

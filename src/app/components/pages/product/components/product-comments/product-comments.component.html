@@ -1,0 +1,17 @@
+<div class="comment">
+  <h3>Leave a comment</h3>
+  <form class="comment-form" [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field class="comment-form-full-width" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="title" type="text" formControlName="commentTitle">
+      <mat-hint>Enter comment title</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field class="comment-form-full-width" appearance="fill">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="comment" type="text" formControlName="commentText"></textarea>
+      <mat-hint>Enter comment text</mat-hint>
+    </mat-form-field>
+    <button mat-raised-button class="comment-submit" type="submit" color="primary">Submit</button>
+  </form>
+</div>

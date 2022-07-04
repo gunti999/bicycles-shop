@@ -33,6 +33,7 @@ import { MatTableModule } from '@angular/material/table';
 
 import { ProductsFilterPipe } from './pipes/products-filter.pipe';
 import { LogInUsernameComponent } from './components/header/components/log-in-username/log-in-username.component';
+import { ProductCommentsComponent } from './components/pages/product/components/product-comments/product-comments.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { LogInUsernameComponent } from './components/header/components/log-in-us
     FooterComponent,
     LogOutComponent,
     BasketContentComponent,
-    LogInUsernameComponent
+    LogInUsernameComponent,
+    ProductCommentsComponent
   ],
   imports: [
     BrowserModule,

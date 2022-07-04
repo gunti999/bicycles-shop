@@ -12,19 +12,5 @@
             </div>
         </mat-grid-tile>
     </mat-grid-list>
-    <div class="product-form">
-        <h3>Leave a comment</h3>
-        <form class="example-form">
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Title</mat-label>
-              <input matInput placeholder="title" value="">
-            </mat-form-field>
-          
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Leave a comment</mat-label>
-              <textarea matInput placeholder="comment"></textarea>
-            </mat-form-field>
-          </form>
-          <button mat-raised-button color="primary">Submit</button>
-    </div>
+    <app-product-comments [prodId] = "product?.id"></app-product-comments>
 </div>

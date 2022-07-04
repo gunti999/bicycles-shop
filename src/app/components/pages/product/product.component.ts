@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { map, switchMap } from 'rxjs';
+import { switchMap } from 'rxjs';
 import { AppDbProductsService, Product } from 'src/app/services/app-db-products.service';
 
 @Component({
