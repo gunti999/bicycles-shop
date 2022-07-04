@@ -9,11 +9,11 @@ export interface User {
 @Injectable({
   providedIn: 'root'
 })
-export class AuthorizationService{
+export class AuthorizationService {
 
   users: User[] = [];
-  logInUser: User | undefined; 
-  authUser: boolean = false; 
+  logInUser: User | undefined;
+  authUser: boolean = false;
 
   constructor() {
     this.users = this.getData();
@@ -35,8 +35,20 @@ export class AuthorizationService{
   }
 
   registration(userData: User) {
-    userData.id = this.idFromUsers();
-    this.users.push(userData);
+    let userFlag = false;
+    this.users.forEach(el => {
+      if (el.username === userData.username || el.password === userData.password) {
+        userFlag = true;
+      } 
+    })
+
+    if (!userFlag ) {
+      userData.id = this.idFromUsers();
+      this.users.push(userData);
+    } else {
+      console.log('registration inavalid');
+    }
+
   }
 
   idFromUsers() {
@@ -46,14 +58,14 @@ export class AuthorizationService{
     return this.users.sort((a, b) => b.id - a.id)[0].id + 1;
   }
 
-  setData(data: User[]) {  
+  setData(data: User[]) {
     const jsonData = JSON.stringify(data);
     localStorage.setItem('myData', jsonData);
   }
 
   getData() {
     let data = localStorage.getItem('myData')
-    if(data != null) {
+    if (data != null) {
       return JSON.parse(data);
     } else {
       return []
