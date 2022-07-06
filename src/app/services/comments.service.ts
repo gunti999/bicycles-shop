@@ -12,7 +12,7 @@ export interface Comments {
 })
 export class CommentsService {
 
-  comments: Comments[] = []
+  comments: Comments[] = [];
 
   constructor() { }
 
@@ -22,7 +22,7 @@ export class CommentsService {
     
   }
 
-  getCommentsByProductId(id: number) {
+  getCommentsByProductId(id?: number) {
     let productComments = this.comments.filter(el => el.productId === id);
     return productComments;
   }

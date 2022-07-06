@@ -17,36 +17,45 @@ export class AuthorizationService {
 
   constructor() {
     this.users = this.getData();
+    this.logInUser = this.getLoginUser();
+    if (this.logInUser != undefined) {
+      this.authUser = true;
+    } else {
+      this.authUser = false;
+    }
   }
 
   logIn(user: string, pass: string) {
-    this.logInUser = this.users.find(el => {
-      if (el.username == user && el.password == pass) {
-        return this.authUser = true;
+    this.logInUser = this.users.find(el => el.username == user && el.password == pass);
+      if (this.logInUser) {
+        this.authUser = true;
+        localStorage.setItem('loginUser', JSON.stringify(this.logInUser));
       } else {
-        return this.authUser = false;
+        alert('Error! This user does not exist, check the username and password.');
+        this.authUser = false;
       }
-    })
     console.log(`Autorization user: ${this.authUser}`);
   }
 
   logOut() {
     this.authUser = false;
+    localStorage.removeItem('loginUser');
   }
 
   registration(userData: User) {
-    let userFlag = false;
+    let userFlag: boolean = false;
     this.users.forEach(el => {
       if (el.username === userData.username) {
         userFlag = true;
       } 
-    })
+    });
 
     if (!userFlag ) {
       userData.id = this.idFromUsers();
       this.users.push(userData);
+      alert('Congratulations! You have registered. Now you can enter your personal account!');
     } else {
-      console.log('registration inavalid');
+      alert('Error! This username is taken. Please try again with a different name.');
     }
 
   }
@@ -64,12 +73,20 @@ export class AuthorizationService {
   }
 
   getData() {
-    let data = localStorage.getItem('myData')
+    let data = localStorage.getItem('myData');
     if (data != null) {
       return JSON.parse(data);
     } else {
-      return []
+      return [];
+    }
+  }
+
+  getLoginUser() {
+    let user = localStorage.getItem('loginUser');
+    if (user != null) {
+      return JSON.parse(user);
+    } else {
+      return undefined;
     }
   }
 }
-

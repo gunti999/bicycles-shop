@@ -10,7 +10,7 @@ import { AppDbProductsService, Product } from 'src/app/services/app-db-products.
 })
 export class ProductComponent implements OnInit {
 
-  product?: Product
+  product: Product | undefined;
 
   constructor(
     private route: ActivatedRoute,

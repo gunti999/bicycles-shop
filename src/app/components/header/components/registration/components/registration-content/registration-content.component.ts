@@ -53,9 +53,9 @@ export class RegistrationContentComponent implements OnInit {
 
   getConfirmPasswordErrorMessage() {
     if (this.form.hasError('passwordsNotMatch')) {
-      return 'Your passwords do not match'
+      return 'Your passwords do not match';
     } else {
-      return 'At least 6 characters'
+      return 'At least 6 characters';
     }
   }
 

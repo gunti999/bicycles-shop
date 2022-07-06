@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthorizationService } from 'src/app/services/authorization.service';
-import { CommentsService } from 'src/app/services/comments.service';
+import { Comments, CommentsService } from 'src/app/services/comments.service';
 
 @Component({
   selector: 'app-product-comments',
@@ -21,23 +21,29 @@ export class ProductCommentsComponent implements OnInit {
     ])
   })
 
-  constructor(
-    private comment: CommentsService,
-    private auth: AuthorizationService
-  ) { }
+  relatedComments: Comments[] = [];
 
-  ngOnInit(): void {
+  constructor(
+    private commentService: CommentsService,
+    private auth: AuthorizationService
+  ) {}
+
+  ngOnInit(): void {   
+    // Not working this.prodId
+    this.relatedComments = this.commentService.getCommentsByProductId(this.prodId);
+    console.log('this.prodId', this.prodId);
   }
 
   submit() {
     if (this.auth.logInUser?.id != undefined && this.prodId != undefined) {
-      this.comment.addComment({
+      this.commentService.addComment({
         userId: this.auth.logInUser?.id,
         productId: this.prodId,
         commentTitle: this.form.value.commentTitle,
         commentText: this.form.value.commentText
       });
     }
+    console.log('commentsPorduct', this.relatedComments);
   }
 
 }

@@ -26,7 +26,7 @@
       <input matInput [type]="hideRepeat ? 'password' : 'text'" formControlName="confirmPassword">
       <button mat-icon-button matSuffix (click)="hideRepeat = !hideRepeat" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hideRepeat">
-        <mat-icon >{{hideRepeat ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-icon>{{hideRepeat ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
       <mat-hint>Confirm your password</mat-hint>
       <mat-error>{{getConfirmPasswordErrorMessage()}}</mat-error>
