@@ -39,6 +39,7 @@ export class AuthorizationService {
 
   logOut() {
     this.authUser = false;
+    this.logInUser = undefined;
     localStorage.removeItem('loginUser');
   }
 
