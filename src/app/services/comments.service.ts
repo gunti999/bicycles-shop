@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 export interface Comments {
   userId: number,
+  username: string,
   productId: number,
   commentTitle: string,
   commentText: string
@@ -17,9 +18,7 @@ export class CommentsService {
   constructor() { }
 
   addComment(comment: Comments) {
-    this.comments.push(comment);
-    console.log('comments', this.comments);
-    
+    this.comments.push(comment);  
   }
 
   getCommentsByProductId(id?: number) {

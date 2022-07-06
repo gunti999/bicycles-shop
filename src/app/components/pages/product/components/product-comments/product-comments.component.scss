@@ -24,3 +24,30 @@
   }
 
 }
+
+.comment-body {
+  padding: 20px;
+  margin-top: 10px;
+  background-color: rgb(238, 238, 238);
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+  .comment-username {
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .username-icon {
+      color: #fff;
+      background-color: #7b1fa2;
+      border-radius: 50%;
+      padding: 5px;
+    }
+  }
+
+  .comment-title {
+    font-weight: 600;
+    margin-top: 10px;
+  }
+}

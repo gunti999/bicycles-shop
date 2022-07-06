@@ -5,18 +5,24 @@
       <mat-label>Title</mat-label>
       <input matInput placeholder="title" type="text" formControlName="commentTitle">
       <mat-hint>Enter comment title</mat-hint>
+      <mat-error>Don't leave empty title</mat-error>
     </mat-form-field>
 
     <mat-form-field class="comment-form-full-width" appearance="fill">
       <mat-label>Leave a comment</mat-label>
       <textarea matInput placeholder="comment" type="text" formControlName="commentText"></textarea>
       <mat-hint>Enter comment text</mat-hint>
+      <mat-error>Don't leave empty text</mat-error>
     </mat-form-field>
-    <button mat-raised-button class="comment-submit" type="submit" color="primary">Submit</button>
+    <button mat-raised-button class="comment-submit" type="submit" color="primary" [disabled]="form.invalid">Submit</button>
   </form>
 </div>
 
 <div class="comment-body" *ngFor="let p of this.relatedComments">
+  <div class="comment-username">
+    <mat-icon class="username-icon" aria-hidden="false" aria-label="user">person</mat-icon>
+    <small class="comment-username">{{p.username}}</small>
+  </div>
   <h3 class="comment-title">{{p.commentTitle}}</h3>
   <p class="comment-text">{{p.commentText}}</p>
 </div>
