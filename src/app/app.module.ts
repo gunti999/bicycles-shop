@@ -13,6 +13,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LogOutComponent } from './components/header/components/log-out/log-out.component';
 import { BasketContentComponent } from './components/header/components/basket/components/basket-content/basket-content.component';
+import { LogInUsernameComponent } from './components/header/components/log-in-username/log-in-username.component';
+import { ProductCommentsComponent } from './components/pages/product/components/product-comments/product-comments.component';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -30,10 +32,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatTableModule } from '@angular/material/table';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { ProductsFilterPipe } from './pipes/products-filter.pipe';
-import { LogInUsernameComponent } from './components/header/components/log-in-username/log-in-username.component';
-import { ProductCommentsComponent } from './components/pages/product/components/product-comments/product-comments.component';
+import { ProductRatingComponent } from './components/pages/product/components/product-rating/product-rating.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,8 @@ import { ProductCommentsComponent } from './components/pages/product/components/
     LogOutComponent,
     BasketContentComponent,
     LogInUsernameComponent,
-    ProductCommentsComponent
+    ProductCommentsComponent,
+    ProductRatingComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,8 @@ import { ProductCommentsComponent } from './components/pages/product/components/
     MatIconModule,
     MatDialogModule,
     MatBadgeModule,
-    MatTableModule
+    MatTableModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

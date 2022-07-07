@@ -5,6 +5,10 @@
         <mat-grid-tile>
             <div class="product-info">
                 <h2 class="product-title">{{product?.name | titlecase}}</h2>
+                <div class="product-rating">
+                    <mat-icon class="star" aria-label="star">star</mat-icon>
+                    <span>0</span>
+                </div>
                 <h3 class="product-cost"><strong>{{product?.description?.price}} {{product?.description?.currency | uppercase}}</strong></h3>
                 <span class="product-category"><strong>Category: </strong>{{product?.category | titlecase}}</span>
                 <p class="porduct-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, nostrum.</p>
@@ -12,5 +16,6 @@
             </div>
         </mat-grid-tile>
     </mat-grid-list>
+    <app-product-rating></app-product-rating>
     <app-product-comments [prodId] = "product?.id"></app-product-comments>
 </div>

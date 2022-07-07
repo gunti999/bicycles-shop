@@ -28,7 +28,7 @@ export class ProductCommentsComponent implements OnInit {
   constructor(
     private commentService: CommentsService,
     private auth: AuthorizationService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -43,6 +43,7 @@ export class ProductCommentsComponent implements OnInit {
         userId: this.auth.logInUser?.id,
         username: this.auth.logInUser.username,
         productId: this.prodId,
+        productRating: this.commentService.ratingOfProduct, 
         commentTitle: this.form.value.commentTitle,
         commentText: this.form.value.commentText
       });
@@ -50,6 +51,7 @@ export class ProductCommentsComponent implements OnInit {
       alert('Comments can be posted only by registered users!')
     }
     this.relatedComments = this.commentService.getCommentsByProductId(this.prodId);
+    this.form.reset();
   }
 
 }

@@ -70,11 +70,11 @@ export class AuthorizationService {
 
   setData(data: User[]) {
     const jsonData = JSON.stringify(data);
-    localStorage.setItem('myData', jsonData);
+    localStorage.setItem('registredUser', jsonData);
   }
 
   getData() {
-    let data = localStorage.getItem('myData');
+    let data = localStorage.getItem('registredUser');
     if (data != null) {
       return JSON.parse(data);
     } else {
