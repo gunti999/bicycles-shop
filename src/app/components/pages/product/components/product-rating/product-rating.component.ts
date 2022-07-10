@@ -21,19 +21,29 @@ export class ProductRatingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    this.productRated();
   }
 
   addRatings() {
     if (this.auth.logInUser?.id != undefined && this.prodId != undefined) {
-      this.productRatingService.getRatings({
+      this.productRatingService.addRatings({
         userId: this.auth.logInUser?.id,
         productId: this.prodId,
         productRating: this.ratingValue
       })
       this.checkRaiting = true;
     } else {
-      alert('registration');
+      alert('Only a registered user can rate!');
+    }
+  }
+
+  productRated() {
+    if (this.auth.logInUser?.id != undefined && this.prodId != undefined) {
+      let rating = this.productRatingService.getRating(this.auth.logInUser?.id, this.prodId);
+      if (rating) {
+        this.checkRaiting = true;
+        this.ratingValue = rating.productRating ?? 0;
+      }
     }
   }
 

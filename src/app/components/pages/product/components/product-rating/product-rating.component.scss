@@ -8,10 +8,23 @@
     .mat-radio-button ~ .mat-radio-button {
         margin-left: 16px;
       }
-}   
+}
+
+.rating-user {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+  .star {
+    font-size: 16px;
+    color: #c7a200;
+    width: 20px;
+    height: 20px;
+  }
+}
 
 .show {
-  display: block;
+  display: flex;
 }
 
 .hide {

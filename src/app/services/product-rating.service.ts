@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 
 export interface Ratings {
@@ -13,11 +14,21 @@ export class ProductRatingService {
 
   ratings: Ratings[] = [];
 
-  constructor() {}
+  constructor() {
+    this.ratings = JSON.parse(localStorage.getItem('rating') ?? '');
+  }
 
-  getRatings(rating: Ratings) {
-    this.ratings.push(rating);  
-    console.log(this.ratings);
+  addRatings(rating: Ratings) {
+    this.ratings.push(rating);
+    localStorage.setItem('rating', JSON.stringify(this.ratings));
+  }
+
+  getRating(userId: number, productId: number) {
+    return this.ratings.find(el => el.userId == userId && el.productId == productId);
+  }
+
+  getRatingsByProductId(productId: number) {
+    return this.ratings.find(el => el.productId == productId);
   }
 
 }

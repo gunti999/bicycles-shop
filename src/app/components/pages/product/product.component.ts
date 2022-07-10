@@ -11,14 +11,15 @@ import { AppDbProductsService, Product } from 'src/app/services/app-db-products.
 export class ProductComponent implements OnInit {
 
   product: Product | undefined;
+  notRatedByUser: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
     private appDb: AppDbProductsService
-    ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.route.params.pipe(switchMap((params: Params) => {     
+    this.route.params.pipe(switchMap((params: Params) => {
       return this.appDb.getProductById(+params['id'])
     })).subscribe((product: Product | undefined) => {
       this.product = product;

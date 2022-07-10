@@ -97,7 +97,7 @@
 
     {
         "id": 7,
-        "name": "podrostok-bicycle-6",
+        "name": "podrostok-bicycle-7",
         "category": "child",
         "bgImageUrl": "/assets/img/products/podrostok1.jpeg",
         "description": {
@@ -113,7 +113,7 @@
 
     {
         "id": 8,
-        "name": "podrostok-bicycle-6",
+        "name": "podrostok-bicycle-8",
         "category": "child",
         "bgImageUrl": "/assets/img/products/podrostok1.jpeg",
         "description": {
@@ -129,7 +129,7 @@
 
     {
         "id": 9,
-        "name": "cruise-bicycle-6",
+        "name": "cruise-bicycle-9",
         "category": "cruise",
         "bgImageUrl": "/assets/img/products/cruise1.jpeg",
         "description": {
@@ -145,7 +145,7 @@
 
     {
         "id": 10,
-        "name": "cruise-bicycle-6",
+        "name": "cruise-bicycle-10",
         "category": "cruise",
         "bgImageUrl": "/assets/img/products/cruise1.jpeg",
         "description": {
