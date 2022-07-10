@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 import { Comments, CommentsService } from 'src/app/services/comments.service';
+import { ProductRatingService } from 'src/app/services/product-rating.service';
 
 @Component({
   selector: 'app-product-comments',
@@ -27,14 +28,12 @@ export class ProductCommentsComponent implements OnInit {
 
   constructor(
     private commentService: CommentsService,
-    private auth: AuthorizationService
+    private auth: AuthorizationService,
+    public productRatingService: ProductRatingService
   ) {}
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.relatedComments = this.commentService.getCommentsByProductId(this.prodId);
-      console.log('this.prodId', this.prodId);
-    }, 100);
+      this.relatedComments = this.commentService.getCommentsByProductId(this.prodId); 
   }
 
   submit() {
@@ -43,7 +42,6 @@ export class ProductCommentsComponent implements OnInit {
         userId: this.auth.logInUser?.id,
         username: this.auth.logInUser.username,
         productId: this.prodId,
-        productRating: this.commentService.ratingOfProduct, 
         commentTitle: this.form.value.commentTitle,
         commentText: this.form.value.commentText
       });

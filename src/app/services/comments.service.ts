@@ -4,7 +4,6 @@ export interface Comments {
   userId: number,
   username: string,
   productId: number,
-  productRating?: number,
   commentTitle: string,
   commentText: string
 }
@@ -15,7 +14,6 @@ export interface Comments {
 export class CommentsService {
 
   comments: Comments[] = [];
-  ratingOfProduct: number = 0;
 
   constructor() {
     this.comments = this.getComments();
@@ -47,8 +45,4 @@ export class CommentsService {
     localStorage.setItem('userComments', jsonData);
   }
 
-  getRatingOfProduct(rating: number) {
-    this.ratingOfProduct = rating;
-    console.log('!!!!!', this.ratingOfProduct);
-  }
 }

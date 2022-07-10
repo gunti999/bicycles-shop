@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CommentsService } from 'src/app/services/comments.service';
+import { AuthorizationService } from 'src/app/services/authorization.service';
+import { ProductRatingService } from 'src/app/services/product-rating.service';
 
 @Component({
   selector: 'app-product-rating',
@@ -8,9 +9,14 @@ import { CommentsService } from 'src/app/services/comments.service';
 })
 export class ProductRatingComponent implements OnInit {
 
+  @Input() prodId?: number = 0;
   ratingValue: number = 0;
+  checkRaiting: boolean = false;
 
-  constructor(private commentService: CommentsService) {
+  constructor(
+    private productRatingService: ProductRatingService,
+    private auth: AuthorizationService
+    ) {
     
   }
 
@@ -18,8 +24,17 @@ export class ProductRatingComponent implements OnInit {
     
   }
 
-  getRatingNumber() {
-    this.commentService.getRatingOfProduct(this.ratingValue);
+  addRatings() {
+    if (this.auth.logInUser?.id != undefined && this.prodId != undefined) {
+      this.productRatingService.getRatings({
+        userId: this.auth.logInUser?.id,
+        productId: this.prodId,
+        productRating: this.ratingValue
+      })
+      this.checkRaiting = true;
+    } else {
+      alert('registration');
+    }
   }
 
 }

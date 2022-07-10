@@ -16,6 +16,6 @@
             </div>
         </mat-grid-tile>
     </mat-grid-list>
-    <app-product-rating></app-product-rating>
-    <app-product-comments [prodId] = "product?.id"></app-product-comments>
+    <app-product-rating [prodId] = "product?.id" *ngIf="product?.id"></app-product-rating>
+    <app-product-comments [prodId] = "product?.id" *ngIf="product?.id"></app-product-comments>
 </div>

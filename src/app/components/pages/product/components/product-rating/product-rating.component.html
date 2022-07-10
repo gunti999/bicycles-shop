@@ -1,10 +1,21 @@
 <div class="rating">
     <h3 class="rating-title">Rating by product</h3>
-    <mat-radio-group aria-label="Select an option" [(ngModel)] = 'ratingValue' (change) = 'getRatingNumber()'>
+    <mat-radio-group
+    aria-label="Select an option"
+    [(ngModel)] = 'ratingValue'
+    (change) = 'ratingValue'
+    (change) = 'addRatings()'
+    [class.hide]="checkRaiting"
+    [class.show]="!checkRaiting"
+    >
         <mat-radio-button value="1">1</mat-radio-button>
         <mat-radio-button value="2">2</mat-radio-button>
         <mat-radio-button value="3">3</mat-radio-button>
         <mat-radio-button value="4">4</mat-radio-button>
         <mat-radio-button value="5">5</mat-radio-button>
     </mat-radio-group>
+    <span 
+    [class.hide]="!checkRaiting"
+    [class.show]="checkRaiting"
+    >Lorem, ipsum dolor.</span>
 </div>

@@ -1,6 +1,6 @@
 [
     {
-        "id": 0,
+        "id": 1,
         "name": "gorny-bicycle-1",
         "category": "sport",
         "bgImageUrl": "/assets/img/products/gorny1.jpeg",
@@ -16,7 +16,7 @@
     },
 
     {
-        "id": 1,
+        "id": 2,
         "name": "gorny-bicycle-2",
         "category": "sport",
         "bgImageUrl": "/assets/img/products/gorny1.jpeg",
@@ -32,7 +32,7 @@
     },
 
     {
-        "id": 2,
+        "id": 3,
         "name": "gorod-bicycle-3",
         "category": "city",
         "bgImageUrl": "/assets/img/products/gorod1.jpeg",
@@ -48,7 +48,7 @@
     },
 
     {
-        "id": 3,
+        "id": 4,
         "name": "gorod-bicycle-4",
         "category": "city",
         "bgImageUrl": "/assets/img/products/gorod1.jpeg",
@@ -64,7 +64,7 @@
     },
 
     {
-        "id": 4,
+        "id": 5,
         "name": "shosse-bicycle-5",
         "category": "highway",
         "bgImageUrl": "/assets/img/products/shosse1.jpeg",
@@ -80,7 +80,7 @@
     },
 
     {
-        "id": 5,
+        "id": 6,
         "name": "shosse-bicycle-6",
         "category": "highway",
         "bgImageUrl": "/assets/img/products/shosse1.jpeg",
@@ -96,7 +96,7 @@
     },
 
     {
-        "id": 6,
+        "id": 7,
         "name": "podrostok-bicycle-6",
         "category": "child",
         "bgImageUrl": "/assets/img/products/podrostok1.jpeg",
@@ -112,7 +112,7 @@
     },
 
     {
-        "id": 7,
+        "id": 8,
         "name": "podrostok-bicycle-6",
         "category": "child",
         "bgImageUrl": "/assets/img/products/podrostok1.jpeg",
@@ -128,7 +128,7 @@
     },
 
     {
-        "id": 8,
+        "id": 9,
         "name": "cruise-bicycle-6",
         "category": "cruise",
         "bgImageUrl": "/assets/img/products/cruise1.jpeg",
@@ -144,7 +144,7 @@
     },
 
     {
-        "id": 9,
+        "id": 10,
         "name": "cruise-bicycle-6",
         "category": "cruise",
         "bgImageUrl": "/assets/img/products/cruise1.jpeg",
