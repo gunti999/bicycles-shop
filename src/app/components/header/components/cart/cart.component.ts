@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { BasketContentComponent } from './components/basket-content/basket-content.component';
+import { CartContentComponent } from './components/cart-content/cart-content.component';
 
 @Component({
-  selector: 'app-basket',
-  templateUrl: './basket.component.html',
-  styleUrls: ['./basket.component.scss']
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.scss']
 })
-export class BasketComponent implements OnInit {
+export class CartComponent implements OnInit {
 
   constructor(private dialog: MatDialog ) { }
 
@@ -15,7 +15,7 @@ export class BasketComponent implements OnInit {
   }
 
   openDialogBasket() {
-    const dialogRef = this.dialog.open(BasketContentComponent, {
+    const dialogRef = this.dialog.open(CartContentComponent, {
       data: {
         title: 'Basket'
       }

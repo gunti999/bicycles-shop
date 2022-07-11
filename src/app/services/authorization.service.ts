@@ -30,6 +30,7 @@ export class AuthorizationService {
       if (this.logInUser) {
         this.authUser = true;
         localStorage.setItem('loginUser', JSON.stringify(this.logInUser));
+        window.location.reload();
       } else {
         alert('Error! This user does not exist, check the username and password.');
         this.authUser = false;

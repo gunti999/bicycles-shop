@@ -43,6 +43,10 @@
                 style="background-image: url({{p.bgImageUrl}})">
                 <div class="product-desc">
                     <h2 class="product-title">{{p.name | titlecase}}</h2>
+                    <div class="product-rating">
+                        <mat-icon class="star" aria-label="star">star</mat-icon>
+                        <span>{{this.productRating.getRatingsByProductId(p.id || 0)}}</span>
+                    </div>
                     <span class="product-coast"><strong>{{p.description.price}} </strong></span>
                     <span class="product-currency"><strong>{{p.description.currency | uppercase}} </strong></span>
                     <p class="product-country"><span>Producing country: </span><strong>{{p.description.producingCountry | uppercase}}</strong></p>

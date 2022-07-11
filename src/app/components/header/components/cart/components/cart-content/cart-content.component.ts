@@ -2,11 +2,11 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-basket-content',
-  templateUrl: './basket-content.component.html',
-  styleUrls: ['./basket-content.component.scss']
+  selector: 'app-cart-content',
+  templateUrl: './cart-content.component.html',
+  styleUrls: ['./cart-content.component.scss']
 })
-export class BasketContentComponent implements OnInit {
+export class CartContentComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
