@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { AppDbProductsService, Product } from 'src/app/services/app-db-products.service';
+import { ProductRatingService } from 'src/app/services/product-rating.service';
 
 @Component({
   selector: 'app-product',
@@ -15,7 +16,8 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private appDb: AppDbProductsService
+    private appDb: AppDbProductsService,
+    public productRating: ProductRatingService
   ) { }
 
   ngOnInit(): void {
@@ -25,5 +27,7 @@ export class ProductComponent implements OnInit {
       this.product = product;
     })
   }
+
+
 
 }

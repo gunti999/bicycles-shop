@@ -7,7 +7,7 @@
                 <h2 class="product-title">{{product?.name | titlecase}}</h2>
                 <div class="product-rating">
                     <mat-icon class="star" aria-label="star">star</mat-icon>
-                    <span>0</span>
+                    <span>{{this.productRating.getRatingsByProductId(product?.id || 0)}}</span>
                 </div>
                 <h3 class="product-cost"><strong>{{product?.description?.price}} {{product?.description?.currency | uppercase}}</strong></h3>
                 <span class="product-category"><strong>Category: </strong>{{product?.category | titlecase}}</span>

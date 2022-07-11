@@ -41,6 +41,7 @@ export class AuthorizationService {
     this.authUser = false;
     this.logInUser = undefined;
     localStorage.removeItem('loginUser');
+    window.location.reload();
   }
 
   registration(userData: User) {
