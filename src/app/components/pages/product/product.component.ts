@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { switchMap } from 'rxjs';
-import { AppDbProductsService, Product } from 'src/app/services/app-db-products.service';
-import { ProductRatingService } from 'src/app/services/product-rating.service';
+import { AddToCartService } from 'src/app/services/cart/add-to-cart.service';
+import { AppDbProductsService, Product } from 'src/app/services/database/app-db-products.service';
+import { AuthorizationService } from 'src/app/services/authorization/authorization.service';
+import { ProductRatingService } from 'src/app/services/rating/product-rating.service';
 
 @Component({
   selector: 'app-product',
@@ -17,7 +19,9 @@ export class ProductComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private appDb: AppDbProductsService,
-    public productRating: ProductRatingService
+    public productRating: ProductRatingService,
+    private addToCartService: AddToCartService,
+    private auth: AuthorizationService
   ) { }
 
   ngOnInit(): void {
@@ -25,9 +29,19 @@ export class ProductComponent implements OnInit {
       return this.appDb.getProductById(+params['id'])
     })).subscribe((product: Product | undefined) => {
       this.product = product;
+      if (this.product) {
+        this.product.rating = +this.productRating.getRatingsByProductId(this.product?.id);
+      }
     })
   }
 
-
-
+  addOrder() {
+    if (this.auth.logInUser?.id != undefined && this.product?.id != undefined) {
+      this.addToCartService.addOrder({
+        orderId: 1,
+        userId: this.auth.logInUser?.id,
+        porductId: this.product?.id
+      })
+    }
+  }
 }

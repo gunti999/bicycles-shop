@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AppDbProductsService } from './app-db-products.service';
+import { AppDbProductsService } from '../database/app-db-products.service';
 
 export interface Cart {
-  id: number;
+  orderId: number;
   userId: number;
   porductId: number;
 }
@@ -18,9 +18,10 @@ export class AddToCartService {
     private prod: AppDbProductsService
   ) { }
 
-  // addOrder(id: number) {
-    
-  // }
+  addOrder(order: Cart) {
+    this.cart.push(order);
+    console.log(this.cart);
+  }
 
   // removeOrder(productId) {
 

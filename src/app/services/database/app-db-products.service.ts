@@ -23,6 +23,8 @@ export interface Product {
 })
 export class AppDbProductsService {
 
+  products: Product[] = [];
+
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {

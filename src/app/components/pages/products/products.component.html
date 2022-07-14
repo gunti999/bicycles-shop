@@ -1,5 +1,14 @@
 <div class="products">
     <div class="filter-conatainer">
+        <h4>Rating</h4>
+        <mat-form-field appearance="fill">
+            <mat-label>Select rating</mat-label>
+            <mat-select [(ngModel)]="rating">
+                <mat-option value="">All</mat-option>
+                <mat-option value="max">MAX</mat-option>
+                <mat-option value="min">MIN</mat-option>
+            </mat-select>
+        </mat-form-field>
         <h4>Category</h4>
         <mat-form-field appearance="fill">
             <mat-label>Select category</mat-label>
@@ -39,13 +48,13 @@
 
     <div class="product-container">
         <mat-grid-list cols="4" rowHeight="1:1" gutterSize="20px">
-            <mat-grid-tile class="product-card" *ngFor="let p of prod | productsFilter: category:currency:country:minPrice:maxPrice"
+            <mat-grid-tile class="product-card" *ngFor="let p of prod | productsFilter: category:currency:country:minPrice:maxPrice:rating"
                 style="background-image: url({{p.bgImageUrl}})">
                 <div class="product-desc">
                     <h2 class="product-title">{{p.name | titlecase}}</h2>
                     <div class="product-rating">
                         <mat-icon class="star" aria-label="star">star</mat-icon>
-                        <span>{{this.productRating.getRatingsByProductId(p.id || 0)}}</span>
+                        <span>{{p.rating}}</span>
                     </div>
                     <span class="product-coast"><strong>{{p.description.price}} </strong></span>
                     <span class="product-currency"><strong>{{p.description.currency | uppercase}} </strong></span>

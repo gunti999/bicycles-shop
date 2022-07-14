@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AuthorizationService } from 'src/app/services/authorization.service';
-import { ProductRatingService } from 'src/app/services/product-rating.service';
+import { AuthorizationService } from 'src/app/services/authorization/authorization.service';
+import { ProductRatingService } from 'src/app/services/rating/product-rating.service';
 
 @Component({
   selector: 'app-product-rating',

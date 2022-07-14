@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AddToCartService } from 'src/app/services/cart/add-to-cart.service';
 import { CartContentComponent } from './components/cart-content/cart-content.component';
 
 @Component({
@@ -9,7 +10,10 @@ import { CartContentComponent } from './components/cart-content/cart-content.com
 })
 export class CartComponent implements OnInit {
 
-  constructor(private dialog: MatDialog ) { }
+  constructor(
+    private dialog: MatDialog,
+    public addToCartService: AddToCartService
+    ) { }
 
   ngOnInit(): void {
   }

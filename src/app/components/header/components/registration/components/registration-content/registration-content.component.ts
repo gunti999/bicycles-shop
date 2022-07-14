@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AuthorizationService } from 'src/app/services/authorization.service';
+import { AuthorizationService } from 'src/app/services/authorization/authorization.service';
 
 @Component({
   selector: 'app-registration-content',

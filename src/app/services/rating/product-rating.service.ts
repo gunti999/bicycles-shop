@@ -46,7 +46,7 @@ export class ProductRatingService {
     if (ratingArr.length != 0) {
       return (sum / ratingArr.length).toFixed(1);
     } else {
-      return sum;
+      return 0;
     }
   }
 

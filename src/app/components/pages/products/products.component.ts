@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AddToCartService } from 'src/app/services/add-to-cart.service';
-import { AppDbProductsService, Product } from 'src/app/services/app-db-products.service';
-import { ProductRatingService } from 'src/app/services/product-rating.service';
+import { AddToCartService } from 'src/app/services/cart/add-to-cart.service';
+import { AppDbProductsService, Product } from 'src/app/services/database/app-db-products.service';
+import { ProductRatingService } from 'src/app/services/rating/product-rating.service';
 
 
 @Component({
@@ -21,6 +21,7 @@ export class ProductsComponent implements OnInit {
   country = '';
   minPrice = 0;
   maxPrice = 0;
+  rating = '';
 
   constructor(
     private router: Router,
@@ -44,6 +45,7 @@ export class ProductsComponent implements OnInit {
   getData() {
     this.appDb.getProducts().subscribe(prod => {
       this.prod = prod;
+      this.updateProductRating();
       this.getFilterList();
       this.getMinMaxPrice();
     });
@@ -71,4 +73,9 @@ export class ProductsComponent implements OnInit {
     this.maxPrice = arr[arr.length - 1];
   }
 
+  updateProductRating() {
+    this.prod.forEach(el => {
+      el.rating = +this.productRating.getRatingsByProductId(el.id);
+    })
+  }
 }

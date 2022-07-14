@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthorizationService } from 'src/app/services/authorization.service';
-import { Comments, CommentsService } from 'src/app/services/comments.service';
-import { ProductRatingService } from 'src/app/services/product-rating.service';
+import { AuthorizationService } from 'src/app/services/authorization/authorization.service';
+import { Comments, CommentsService } from 'src/app/services/comments/comments.service';
+import { ProductRatingService } from 'src/app/services/rating/product-rating.service';
 
 @Component({
   selector: 'app-product-comments',

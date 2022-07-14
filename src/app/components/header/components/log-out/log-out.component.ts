@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthorizationService } from 'src/app/services/authorization.service';
+import { AuthorizationService } from 'src/app/services/authorization/authorization.service';
 
 @Component({
   selector: 'app-log-out',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppDbProductsService } from 'src/app/services/app-db-products.service';
+import { AppDbProductsService } from 'src/app/services/database/app-db-products.service';
 
 @Component({
   selector: 'app-home',
