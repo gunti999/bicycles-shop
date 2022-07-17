@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AddToCartService } from 'src/app/services/cart/add-to-cart.service';
+import { AddToCartService } from 'src/app/services/cart/cart.service';
 import { AppDbProductsService, Product } from 'src/app/services/database/app-db-products.service';
 import { ProductRatingService } from 'src/app/services/rating/product-rating.service';
 
@@ -27,7 +27,7 @@ export class ProductsComponent implements OnInit {
     private router: Router,
     private appDb: AppDbProductsService,
     private activatedRoute: ActivatedRoute,
-    private cart: AddToCartService,
+    public cartService: AddToCartService,
     public productRating: ProductRatingService
   ) { }
 

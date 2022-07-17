@@ -1,4 +1,16 @@
-<div class="basket">
+<div class="cart">
     <h2 class="mat-dialog-title">{{data.title | titlecase}}</h2>
-    <div class="mat-dialog-content">{{data.title | titlecase}}</div>
+    <hr>
+    <div class="cart-list">
+        <div class="mat-dialog-content" *ngFor="let p of cartService.products">
+            <img src="{{p.bgImageUrl}}" alt="{{p.name}}">
+            <span>{{p.name}}</span>
+            <span>{{p.description.price}}</span>
+                <mat-icon class="delete-cross" aria-label="close" (click) = "cartService.removeProduct(p.id)">close</mat-icon>
+        </div>
+    </div>
+    <div class="cart-footer">
+        <span>Sum: {{orderSum()}}</span>
+        <button mat-raised-button color="primary">Submit</button>
+    </div>
 </div>

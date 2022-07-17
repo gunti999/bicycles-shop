@@ -1,0 +1,39 @@
+.cart {
+    width: 620px;
+
+    .mat-dialog-title{
+        text-align: center;
+    }
+}
+
+.cart-list {
+    max-height: 620px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 30px 0px;
+}
+
+.mat-dialog-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    img {
+        height: 30px;
+    }
+
+    .delete-cross {
+        transition: color 0.2s;
+    }
+
+    .delete-cross:hover{
+        color: #f44336; 
+    }
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

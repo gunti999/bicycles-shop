@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AddToCartService } from 'src/app/services/cart/add-to-cart.service';
+import { AddToCartService } from 'src/app/services/cart/cart.service';
 import { CartContentComponent } from './components/cart-content/cart-content.component';
 
 @Component({
@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
 
   constructor(
     private dialog: MatDialog,
-    public addToCartService: AddToCartService
+    public cartService: AddToCartService
     ) { }
 
   ngOnInit(): void {
@@ -21,7 +21,7 @@ export class CartComponent implements OnInit {
   openDialogBasket() {
     const dialogRef = this.dialog.open(CartContentComponent, {
       data: {
-        title: 'Basket'
+        title: 'Cart'
       }
     });
 

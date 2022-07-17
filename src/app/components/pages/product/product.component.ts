@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { switchMap } from 'rxjs';
-import { AddToCartService } from 'src/app/services/cart/add-to-cart.service';
+import { AddToCartService } from 'src/app/services/cart/cart.service';
 import { AppDbProductsService, Product } from 'src/app/services/database/app-db-products.service';
 import { AuthorizationService } from 'src/app/services/authorization/authorization.service';
 import { ProductRatingService } from 'src/app/services/rating/product-rating.service';
@@ -20,7 +20,7 @@ export class ProductComponent implements OnInit {
     private route: ActivatedRoute,
     private appDb: AppDbProductsService,
     public productRating: ProductRatingService,
-    private addToCartService: AddToCartService,
+    public cartService: AddToCartService,
     private auth: AuthorizationService
   ) { }
 
@@ -35,13 +35,4 @@ export class ProductComponent implements OnInit {
     })
   }
 
-  addOrder() {
-    if (this.auth.logInUser?.id != undefined && this.product?.id != undefined) {
-      this.addToCartService.addOrder({
-        orderId: 1,
-        userId: this.auth.logInUser?.id,
-        porductId: this.product?.id
-      })
-    }
-  }
 }

@@ -12,7 +12,7 @@
                 <h3 class="product-cost"><strong>{{product?.description?.price}} {{product?.description?.currency | uppercase}}</strong></h3>
                 <span class="product-category"><strong>Category: </strong>{{product?.category | titlecase}}</span>
                 <p class="porduct-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, nostrum.</p>
-                <button mat-raised-button color="primary" (click)="addOrder()">To cart</button>
+                <button mat-raised-button color="primary" (click)="cartService.addProducts(product?.id || 0)">To cart</button>
             </div>
         </mat-grid-tile>
     </mat-grid-list>
