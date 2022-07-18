@@ -9,8 +9,10 @@
                 <mat-icon class="delete-cross" aria-label="close" (click) = "cartService.removeProduct(p.id)">close</mat-icon>
         </div>
     </div>
+    <span>Sum: {{orderSum()}}</span>
+    <hr>
     <div class="cart-footer">
-        <span>Sum: {{orderSum()}}</span>
-        <button mat-raised-button color="primary">Submit</button>
+        <button mat-raised-button color="warn" (click)="cartService.removeAllProducts()">Remove All</button>
+        <button mat-raised-button mat-dialog-close color="primary" (click)="cartService.submit()">Submit</button>
     </div>
 </div>
