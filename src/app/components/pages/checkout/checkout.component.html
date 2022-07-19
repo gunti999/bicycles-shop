@@ -1,0 +1,14 @@
+<div class="checkout">
+  <h2>Checkout</h2>
+  <div class="products-list">
+    <div class="product" *ngFor="let p of cartService.products">
+      <img src="{{p.bgImageUrl}}" alt="{{p.name}}">
+      <span>{{p.name}}</span>
+      <span>{{p.description.price}}</span>
+    </div>
+  </div>
+  <span class="products-summ">1000</span>
+  <div class="checkout-form">
+    <button>1</button>
+  </div>
+</div>

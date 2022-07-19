@@ -33,9 +33,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatMenuModule} from '@angular/material/menu';
 
 import { ProductsFilterPipe } from './pipes/products-filter.pipe';
 import { ProductRatingComponent } from './components/pages/product/components/product-rating/product-rating.component';
+import { HistoryComponent } from './components/pages/history/history.component';
+import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +60,9 @@ import { ProductRatingComponent } from './components/pages/product/components/pr
     CartContentComponent,
     LogInUsernameComponent,
     ProductCommentsComponent,
-    ProductRatingComponent
+    ProductRatingComponent,
+    HistoryComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +81,8 @@ import { ProductRatingComponent } from './components/pages/product/components/pr
     MatDialogModule,
     MatBadgeModule,
     MatTableModule,
-    MatRadioModule
+    MatRadioModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
