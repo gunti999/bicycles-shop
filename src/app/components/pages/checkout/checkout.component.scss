@@ -1,3 +1,8 @@
+.checkout-title {
+  text-align: center;
+  margin: 50px 0;
+}
+
 .products-list {
   display: flex;
   flex-direction: column;
@@ -15,5 +20,36 @@
     img {
       height: 50px;
     }
+  }
+}
+
+.products-sum {
+  text-align: center;
+  margin: 50px 0;
+
+  strong {
+    text-decoration: underline;
+    font-size: 18px;
+  }
+}
+
+.checkout-form {
+  background-color: #7b1fa27d;
+  padding: 20px;
+  margin: 50px 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  mat-form-field {
+    width: 50%;
+  }
+
+  mat-radio-group {
+    width: 50%;
+    display: flex;
+    gap: 30px;
+    color: #fff;
   }
 }

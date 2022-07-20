@@ -1,14 +1,30 @@
 <div class="checkout">
-  <h2>Checkout</h2>
+  <h2 class="checkout-title">Checkout</h2>
   <div class="products-list">
     <div class="product" *ngFor="let p of cartService.products">
-      <img src="{{p.bgImageUrl}}" alt="{{p.name}}">
+      <img [src]="p.bgImageUrl" [alt]="p.name">
       <span>{{p.name}}</span>
       <span>{{p.description.price}}</span>
     </div>
   </div>
-  <span class="products-summ">1000</span>
-  <div class="checkout-form">
-    <button>1</button>
-  </div>
+  <p class="products-sum">Order cost: <strong>{{orderSum()}}</strong></p>
+  <form class="checkout-form" [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+      <input matInput type="email" formControlName="email">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Adress</mat-label>
+      <textarea matInput type="text" formControlName="adress"></textarea>
+    </mat-form-field>
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Delivery</mat-radio-button>
+      <mat-radio-button value="2">Pickup</mat-radio-button>
+    </mat-radio-group>
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Сheckout</button>
+  </form>
 </div>

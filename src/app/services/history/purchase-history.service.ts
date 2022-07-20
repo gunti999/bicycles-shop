@@ -3,9 +3,14 @@ import { Product } from '../database/app-db-products.service';
 
 export interface Order {
   orderId: number,
-  userId: number,
+  userId?: number,
   products: Product[],
-  date: Date
+  date: number,
+  user: {
+    name: string,
+    email: string,
+    adress: string
+  }
 }
 
 @Injectable({
@@ -19,5 +24,7 @@ export class PurchaseHistoryService {
 
   addOrder(data: Order) {
     this.orders.push(data);
+    console.log(this.orders);
+    
   }
 }
