@@ -16,7 +16,14 @@
   <span>Sum: {{orderSum()}}</span>
   <hr>
   <div class="cart-footer">
-    <button mat-raised-button color="warn" (click)="cartService.removeAllProducts()">Remove All</button>
+    <button 
+      mat-raised-button
+      color="warn"
+      (click)="cartService.removeAllProducts()"
+      [disabled]="!cartService.products.length"
+      >
+      Remove All
+    </button>
     <button
       mat-raised-button
       mat-dialog-close
@@ -24,6 +31,9 @@
       (click)="cartService.submit()"
       routerLinkActive="active"
       routerLink="/checkout"
-      >Submit</button>
+      [disabled]="!cartService.products.length"
+    >
+    Submit
+    </button>
   </div>
 </div>

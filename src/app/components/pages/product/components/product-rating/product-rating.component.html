@@ -7,6 +7,7 @@
     (change) = 'addRatings()'
     [class.hide]="checkRaiting"
     [class.show]="!checkRaiting"
+    *ngIf="auth.authUser"
     >
         <mat-radio-button value="1">1</mat-radio-button>
         <mat-radio-button value="2">2</mat-radio-button>
@@ -19,4 +20,7 @@
     [class.hide]="!checkRaiting"
     [class.show]="checkRaiting"
     >You rated the item: {{this.ratingValue}}<mat-icon class="star" aria-label="star">star</mat-icon></span>
+    <span *ngIf="!auth.authUser" style="color: rgba(255, 255, 255, 0.5)">
+        Rating can be posted only by registered users!
+    </span>
 </div>

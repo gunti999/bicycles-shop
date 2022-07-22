@@ -135,7 +135,7 @@
         "description": {
             "weight": 90,
             "frameMaterial": "steel",
-            "price": 1000,
+            "price": 900,
             "currency": "eur",
             "numberOfSpeeds": 90,
             "producingCountry": "Belarus"
@@ -151,7 +151,7 @@
         "description": {
             "weight": 100,
             "frameMaterial": "steel",
-            "price": 100,
+            "price": 1000,
             "currency": "usd",
             "numberOfSpeeds": 100,
             "producingCountry": "Ukraine"

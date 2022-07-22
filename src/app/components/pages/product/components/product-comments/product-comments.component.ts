@@ -28,12 +28,12 @@ export class ProductCommentsComponent implements OnInit {
 
   constructor(
     private commentService: CommentsService,
-    private auth: AuthorizationService,
+    public auth: AuthorizationService,
     public productRatingService: ProductRatingService
   ) {}
 
   ngOnInit(): void {
-      this.relatedComments = this.commentService.getCommentsByProductId(this.prodId); 
+      this.relatedComments = this.commentService.getCommentsByProductId(this.prodId);
   }
 
   submit() {

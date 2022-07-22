@@ -15,7 +15,7 @@ export class ProductRatingComponent implements OnInit {
 
   constructor(
     private productRatingService: ProductRatingService,
-    private auth: AuthorizationService
+    public auth: AuthorizationService
     ) {
     
   }

@@ -13,14 +13,16 @@ export class CheckoutComponent implements OnInit {
 
   form: FormGroup = new FormGroup({
     name: new FormControl('', [
-      Validators.required
+      Validators.required,
+      Validators.minLength(1)
     ]),
     email: new FormControl('', [
       Validators.required,
       Validators.email
     ]),
     adress: new FormControl('', [
-      Validators.required
+      Validators.required,
+      Validators.minLength(1)
     ])
   })
 
@@ -57,6 +59,7 @@ export class CheckoutComponent implements OnInit {
     })
     this.cartService.removeAllProducts();
     this.orderId++;
+    this.form.reset();
   }
 
 }

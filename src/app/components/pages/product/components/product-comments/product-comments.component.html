@@ -3,7 +3,7 @@
   <form class="comment-form" [formGroup]="form" (ngSubmit)="submit()">
     <mat-form-field class="comment-form-full-width" appearance="fill">
       <mat-label>Title</mat-label>
-      <input matInput placeholder="title" type="text" formControlName="commentTitle">
+      <input matInput placeholder="title" type="text" formControlName="commentTitle" >
       <mat-hint>Enter comment title</mat-hint>
       <mat-error>Don't leave empty title</mat-error>
     </mat-form-field>
@@ -14,7 +14,19 @@
       <mat-hint>Enter comment text</mat-hint>
       <mat-error>Don't leave empty text</mat-error>
     </mat-form-field>
-    <button mat-raised-button class="comment-submit" type="submit" color="primary" [disabled]="form.invalid">Submit</button>
+    <button
+      mat-raised-button
+      class="comment-submit"
+      type="submit"
+      color="primary"
+      [disabled]="form.invalid"
+      *ngIf="auth.authUser"
+    >
+    Submit
+    </button>
+    <span *ngIf="!auth.authUser" style="color: rgba(255, 255, 255, 0.5)">
+      Comments can be posted only by registered users!
+    </span>
   </form>
 </div>
 

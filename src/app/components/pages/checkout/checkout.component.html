@@ -22,9 +22,10 @@
       <textarea matInput type="text" formControlName="adress"></textarea>
     </mat-form-field>
     <mat-radio-group aria-label="Select an option">
-      <mat-radio-button value="1">Delivery</mat-radio-button>
-      <mat-radio-button value="2">Pickup</mat-radio-button>
+      <mat-radio-button value="delivery">Delivery</mat-radio-button>
+      <mat-radio-button value="pickup">Pickup</mat-radio-button>
     </mat-radio-group>
-    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Сheckout</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!cartService.products.length || form.invalid">Сheckout</button>
+    <span style="color: red" *ngIf="!cartService.products.length">Your order is empty, please add the item to your shopping cart</span>
   </form>
 </div>

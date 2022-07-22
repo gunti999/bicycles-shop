@@ -25,6 +25,7 @@ export class AddToCartService {
 
   removeProduct(index: number) {
         this.products.splice(index, 1);
+        this.setProducts();
         console.log(this.products);
   }
 
