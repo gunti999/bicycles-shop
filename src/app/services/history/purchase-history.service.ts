@@ -20,11 +20,37 @@ export class PurchaseHistoryService {
 
   orders: Order[] = [];
 
-  constructor() { }
+  constructor() {
+    if (this.getOrders() != undefined) {
+      this.orders = this.getOrders();
+    }
+      
+      console.log(this.orders);
+      
+  }
 
   addOrder(data: Order) {
     this.orders.push(data);
-    console.log(this.orders);
-    
+    this.setOrders(this.orders);
+    console.log(this.orders); 
+  }
+
+  setOrders(data: Order[]) {
+    const jsonData = JSON.stringify(data);
+    localStorage.setItem('OrdersList', jsonData);
+  }
+
+  getOrders() {
+    let orders = localStorage.getItem('OrdersList');
+    if (orders != null) {
+      return JSON.parse(orders);
+    } else {
+      return undefined;
+    }
+  }
+
+  getOrdersByUserId(userId: number) {
+    let userOrders = this.orders.filter(el => el.userId === userId);
+    return userOrders;
   }
 }

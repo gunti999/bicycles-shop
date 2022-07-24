@@ -35,6 +35,7 @@ export class CheckoutComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.orderId = this.getData();
   }
 
   orderSum() {
@@ -59,7 +60,17 @@ export class CheckoutComponent implements OnInit {
     })
     this.cartService.removeAllProducts();
     this.orderId++;
+    localStorage.setItem('orderId', String(this.orderId));
     this.form.reset();
+  }
+
+  getData() {
+    let id = localStorage.getItem('orderId');
+    if (id != null) {
+      return +id;
+    } else {
+      return this.orderId;
+    }
   }
 
 }

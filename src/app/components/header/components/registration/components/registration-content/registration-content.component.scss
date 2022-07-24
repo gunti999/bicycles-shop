@@ -1,3 +1,11 @@
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .registration {
 
     text-align: center;
@@ -25,10 +33,16 @@
     }
   }
 
-  .hide {
-    display: none;
+.registration-true {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  .registration-check {
+    font-size: 36px;
+    color: rgb(24, 138, 24);
   }
 
-  .show {
-    display: block;
-  }
+}

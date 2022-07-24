@@ -31,7 +31,7 @@ export class RegistrationContentComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private auth: AuthorizationService 
+    public auth: AuthorizationService 
     ) {
 
   }
@@ -61,6 +61,9 @@ export class RegistrationContentComponent implements OnInit {
 
   submit() {
     this.auth.registration(this.form.value);
+    if (this.auth.notCorrectUsername) {
+      this.form.get('username')?.setErrors({notCorrectUsername: true})
+    }
     this.auth.setData(this.auth.users);
   }
 

@@ -1,12 +1,18 @@
 <div class="registration">
   <h2 class="mat-dialog-title">{{data?.title | titlecase}}</h2>
-  <form class="mat-dialog-content" [formGroup]="form" (ngSubmit)="submit()">
+  <form class="mat-dialog-content" [formGroup]="form" (ngSubmit)="submit()" *ngIf="!auth.successfulRegistration">
     <mat-form-field appearance="fill">
       <mat-label>Username</mat-label>
       <input matInput type="text" formControlName="username">
       <mat-hint>Enter your username</mat-hint>
-      <mat-error>
+      <mat-error *ngIf="form.controls['username'].hasError('required')">
+        Username is required
+      </mat-error>
+      <mat-error *ngIf="form.controls['username'].hasError('minlength')">
         At least 4 characters
+      </mat-error>
+      <mat-error *ngIf="form.controls['username'].hasError('notCorrectUsername')">
+        This username already exists
       </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
@@ -32,8 +38,13 @@
       <mat-error>{{getConfirmPasswordErrorMessage()}}</mat-error>
     </mat-form-field>
     <div class="reg-btn">
-      <button mat-raised-button mat-dialog-close type="submit" [disabled]="form.invalid" color="primary">Submit</button>
+      <button mat-raised-button type="submit" [disabled]="form.invalid" color="primary">Submit</button>
       <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
     </div>
   </form>
+  <div class="registration-true" *ngIf="auth.successfulRegistration">
+    <mat-icon inline class="registration-check">check</mat-icon>
+    <span>Congratulations! You have registered. Now you can enter your personal account!</span>
+    <button mat-raised-button mat-dialog-close color="primary">Close</button> 
+  </div>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthorizationService } from 'src/app/services/authorization/authorization.service';
+import { Order, PurchaseHistoryService } from 'src/app/services/history/purchase-history.service';
 
 @Component({
   selector: 'app-history',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
-  constructor() { }
+  ordersForUser: Order[] = [];
+
+  constructor(
+    public auth: AuthorizationService,
+    public purchaseHistory: PurchaseHistoryService
+  ) { }
 
   ngOnInit(): void {
+    if (this.auth.logInUser != undefined) {
+      this.ordersForUser = this.purchaseHistory.getOrdersByUserId(this.auth.logInUser.id);
+    }
   }
 
 }

@@ -14,6 +14,8 @@ export class AuthorizationService {
   users: User[] = [];
   logInUser: User | undefined;
   authUser: boolean = false;
+  successfulRegistration = false;
+  notCorrectUsername = false;
 
   constructor() {
     this.users = this.getData();
@@ -32,10 +34,8 @@ export class AuthorizationService {
         localStorage.setItem('loginUser', JSON.stringify(this.logInUser));
         window.location.reload();
       } else {
-        alert('Error! This user does not exist, check the username and password.');
         this.authUser = false;
       }
-    console.log(`Autorization user: ${this.authUser}`);
   }
 
   logOut() {
@@ -56,9 +56,9 @@ export class AuthorizationService {
     if (!userFlag ) {
       userData.id = this.idFromUsers();
       this.users.push(userData);
-      alert('Congratulations! You have registered. Now you can enter your personal account!');
+      this.successfulRegistration = true;
     } else {
-      alert('Error! This username is taken. Please try again with a different name.');
+        this.notCorrectUsername = true;
     }
 
   }

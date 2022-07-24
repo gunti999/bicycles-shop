@@ -1,6 +1,19 @@
 <div class="history">
     <h2>Purchase History</h2>
-    <div class="history-content">
-        <h3>1</h3>
-    </div>
+    <span *ngIf="ordersForUser.length <= 0">
+        Register to see your order history.
+    </span>
+    <mat-grid-list [gutterSize]="'20px'" cols="4" rowHeight="4:3">
+        <mat-grid-tile *ngFor="let order of ordersForUser">
+            <div class="history-content" >
+                <div class="order">
+                    <small>{{order.date | date:'medium'}}</small>
+                    <h3>Order №{{order.orderId}}</h3>
+                    <div class="order-products" *ngFor="let o of order.products">
+                        <span>{{o.name}} — {{o.description.price}} {{o.description.currency | uppercase}}</span>
+                    </div>
+                </div>
+            </div>
+        </mat-grid-tile>
+      </mat-grid-list>
 </div>
