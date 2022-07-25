@@ -24,6 +24,12 @@
       <mat-label>Adress</mat-label>
       <textarea matInput type="text" formControlName="adress"></textarea>
     </mat-form-field>
-    <button mat-raised-button color="primary" type="submit" [disabled]="!cartService.products.length || form.invalid">Сheckout</button>
+    <button
+      mat-raised-button color="primary"
+      type="submit"
+      [disabled]="!cartService.products.length || form.invalid"
+    >
+      Сheckout
+    </button>
   </form>
 </div>

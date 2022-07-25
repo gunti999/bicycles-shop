@@ -34,12 +34,12 @@
       </mat-select>
     </mat-form-field>
     <h4>Currency</h4>
-    <section class="example-section">
-      <mat-form-field class="example-margin example-width" appearance="fill">
+    <section class="currency-section">
+      <mat-form-field class="currency-margin currency-width" appearance="fill">
         <mat-label>Min value</mat-label>
         <input matInput type="number" [(ngModel)]="minPrice">
       </mat-form-field>
-      <mat-form-field class="example-margin example-width" appearance="fill">
+      <mat-form-field class="currency-margin currency-width" appearance="fill">
         <mat-label>Max value</mat-label>
         <input matInput type="number" [(ngModel)]="maxPrice">
       </mat-form-field>
@@ -47,25 +47,31 @@
   </div>
 
   <div class="product-container">
-    <div class="product-card"
-      *ngFor="let p of prod | productsFilter: category:currency:country:minPrice:maxPrice:rating">
-      <img class="product-img" [src]="p.bgImageUrl" [alt]="p.name">
-      <div class="product-desc">
-        <h2 class="product-title">{{p.name | titlecase}}</h2>
-        <div class="product-rating">
-          <mat-icon class="star" aria-label="star">star</mat-icon>
-          <span>{{p.rating}}</span>
+    <mat-grid-list cols="3" [gutterSize]="'30px'">
+      <mat-grid-tile *ngFor="let p of prod | productsFilter: category:currency:country:minPrice:maxPrice:rating">
+        <div class="product-area">
+          <div class="product-img">
+            <img [src]="p.bgImageUrl" [alt]="p.name">
+          </div>
+          <div class="product-desc">
+            <div class="product-title">
+              <h2>{{p.name | titlecase}}</h2>
+              <span><strong>{{p.description.price}} </strong></span>
+              <span><strong>{{p.description.currency | uppercase}} </strong></span>
+            </div>
+            <div class="product-rating">
+              <mat-icon class="star" aria-label="star">star</mat-icon>
+              <span>{{p.rating}}</span>
+            </div>
+            <p class="product-country"><span>Producing country: </span><strong>{{p.description.producingCountry | uppercase}}</strong></p>
+            <p class="product-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, cum.</p>
+            <div class="product-button">
+              <button mat-raised-button [routerLink]="['/product', p.id]">More info</button>
+              <button mat-raised-button color="primary" (click)="cartService.addProducts(p.id)">To cart</button>
+            </div>
+          </div>
         </div>
-        <span class="product-coast"><strong>{{p.description.price}} </strong></span>
-        <span class="product-currency"><strong>{{p.description.currency | uppercase}} </strong></span>
-        <p class="product-country"><span>Producing country: </span><strong>{{p.description.producingCountry |
-            uppercase}}</strong></p>
-        <p class="product-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, cum.</p>
-        <div class="product-button">
-          <button mat-raised-button [routerLink]="['/product', p.id]">More info</button>
-          <button mat-raised-button color="primary" (click)="cartService.addProducts(p.id)">To cart</button>
-        </div>
-      </div>
-    </div>
+      </mat-grid-tile>
+    </mat-grid-list>
   </div>
 </div>

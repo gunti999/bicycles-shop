@@ -1,6 +1,6 @@
 .header {
 
-  background-color: rgb(145, 145, 145);
+  background-color: #7b1fa27d;
   padding: 20px 10px;
   color: #fff;
 
@@ -12,6 +12,10 @@
     .logo {
       cursor: pointer;
       margin: 0;
+
+      h1 {
+        margin: 0;
+      }
     }
 
     .menu {

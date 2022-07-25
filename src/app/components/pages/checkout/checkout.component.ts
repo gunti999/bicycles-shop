@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthorizationService } from 'src/app/services/authorization/authorization.service';
 import { AddToCartService } from 'src/app/services/cart/cart.service';
 import { PurchaseHistoryService } from 'src/app/services/history/purchase-history.service';
@@ -31,7 +32,8 @@ export class CheckoutComponent implements OnInit {
   constructor(
     public cartService: AddToCartService,
     private purchaseHistoryService: PurchaseHistoryService,
-    private authorizationService: AuthorizationService
+    private authorizationService: AuthorizationService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -62,6 +64,7 @@ export class CheckoutComponent implements OnInit {
     this.orderId++;
     localStorage.setItem('orderId', String(this.orderId));
     this.form.reset();
+    this.navigateToHistory();
   }
 
   getData() {
@@ -73,4 +76,7 @@ export class CheckoutComponent implements OnInit {
     }
   }
 
+  navigateToHistory() {
+    this.router.navigate(['/history']);
+  }
 }

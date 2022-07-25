@@ -9,8 +9,8 @@
                 <div class="order">
                     <small>{{order.date | date:'medium'}}</small>
                     <h3>Order №{{order.orderId}}</h3>
-                    <div class="order-products" *ngFor="let o of order.products">
-                        <span>{{o.name}} — {{o.description.price}} {{o.description.currency | uppercase}}</span>
+                    <div class="order-products" *ngFor="let o of order.products; let index = index">
+                        <span>{{index + 1}}: {{o.name | uppercase}} — {{o.description.price}} {{o.description.currency | uppercase}}</span>
                     </div>
                 </div>
             </div>

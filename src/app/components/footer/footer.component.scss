@@ -1,5 +1,11 @@
 .footer {
-    background-color: rgb(145, 145, 145);
+    background-color: #424242;
     padding: 20px 10px;
     color: #fff;
+
+    .footer-content {
+        h1 {
+            margin: 0;
+        }
+    }
 }
