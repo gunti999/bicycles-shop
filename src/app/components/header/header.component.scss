@@ -43,3 +43,15 @@
 .hide {
   display: none;
 }
+
+@media (max-width: 950px) {
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .menu {
+    gap: 0;
+    flex-wrap: wrap;
+  }
+}

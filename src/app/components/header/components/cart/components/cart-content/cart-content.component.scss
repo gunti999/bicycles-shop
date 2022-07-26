@@ -37,3 +37,14 @@
     justify-content: space-between;
     align-items: center;
 }
+
+@media (max-width: 840px) {
+    .cart {
+        width: 320px;
+        height: 400px;
+
+        .cart-list {
+            width: 300px;
+        }
+    }
+}

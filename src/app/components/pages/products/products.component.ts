@@ -22,6 +22,7 @@ export class ProductsComponent implements OnInit {
   minPrice = 0;
   maxPrice = 0;
   rating = '';
+  breakpoint = 0;
 
   constructor(
     private router: Router,
@@ -40,6 +41,17 @@ export class ProductsComponent implements OnInit {
     this.activatedRoute.queryParamMap.subscribe(paramMap => {
       this.category = paramMap.get('category') || '';
     })
+    this.breakpoint = (window.innerWidth <= 800) ? 1 : 3;
+  }
+
+  onResize(event: any) {
+    if (event.target.innerWidth <= 880) {
+      this.breakpoint = 1;
+    } else if (event.target.innerWidth <= 1350) {
+      this.breakpoint = 2;
+    } else {
+      this.breakpoint = 3;
+    }  
   }
 
   getData() {

@@ -47,7 +47,7 @@
   </div>
 
   <div class="product-container">
-    <mat-grid-list cols="3" [gutterSize]="'30px'">
+    <mat-grid-list [cols]="breakpoint" [gutterSize]="'30px'" (window:resize)="onResize($event)">
       <mat-grid-tile *ngFor="let p of prod | productsFilter: category:currency:country:minPrice:maxPrice:rating">
         <div class="product-area">
           <div class="product-img">
